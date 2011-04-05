@@ -205,8 +205,14 @@ public class TouchPanel extends SimplePanel implements RequiresResize, ProvidesR
 	}
 	
 	protected void onTouchStart(Event e) {
+		
+		Element target = DOM.eventGetTarget(e);
+		if("INPUT".equals(target.getNodeName())) {
+			return;
+		}
+		
 			e.preventDefault();
-//			e.stopPropagation();
+			e.stopPropagation();
 
 			JsArray<Touch> touches = e.getTouches();
 

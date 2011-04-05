@@ -1,0 +1,93 @@
+@external .gwtTouch-*;
+
+/** CSS Style for the FormView **/
+
+.gwtTouch-FormView {
+	margin-bottom: 20px !IMPORTANT;
+}
+
+.gwtTouch-FormViewBody {
+	border: 1px solid rgb(184, 187, 191);
+	border-radius:5px;	
+	-webkit-border-radius:5px;
+	background-color:#FFF;
+	box-shadow: 1px 1px #FFF;
+	overflow:hidden;
+}
+
+.gwtTouch-FormViewBody>div {
+	border-top: 1px solid rgb(184, 187, 191);
+}
+
+.gwtTouch-FormViewBody>div:first-child {
+	border-top: 0px solid transparent;
+}
+
+.gwtTouch-FormView .gwtTouch-HeaderLabel {
+	font-size:16px;
+	font-weight:bold;
+	color: rgb(59,68,90);
+	text-shadow: 1px 1px #FFF;
+	text-align:left;
+	padding:0px 0px 7px 5px !IMPORTANT;
+}
+
+.gwtTouch-FormView .gwtTouch-FooterLabel {
+	font-size:15px;
+	font-weigth:normal;
+	text-align:center;
+	color: rgb(59,68,90);
+	text-shadow: 1px 1px #FFF;
+	padding-top: 5px !IMPORTANT;
+}
+
+/** CSS Style for the FormView's TextField **/
+
+.gwtTouch-TextField {
+	position:relative;
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	white-space:nowrap;
+	-webkit-user-select: none;
+}
+
+.gwtTouch-TextFieldLabel {
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	width:35%;
+	border-right: 1px solid rgb(184, 187, 191);
+}
+
+.gwtTouch-TextFieldLabel>div {
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:10px;
+	right:10px;
+	color:rgb(41,65,118);
+	font-size:16px;
+	font-weight:bold;
+	text-align:right;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+
+.gwtTouch-TextField input:disabled,
+.gwtTouch-TextField input {
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	padding-left:10px !IMPORTANT;
+	padding-right:10px !IMPORTANT;
+	border:0px solid transparent;
+	-webkit-user-select: text !IMPORTANT;
+	font-size:16px;
+	font-weight:bold;
+	border-radius:5px;
+	background:#FFF;
+}

@@ -4,6 +4,6 @@
     <inherits name="com.google.gwt.i18n.I18N" />
 
 	<source path="client"/>
-    
+    <public path="path" />
     <stylesheet src="style.css"/>
 </module>
