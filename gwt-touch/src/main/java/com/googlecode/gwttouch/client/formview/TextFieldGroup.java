@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasWidgets;
@@ -16,21 +13,16 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class TextFieldGroup extends Composite implements HasWidgets{
 
-	interface Binder extends UiBinder<FlexTable, TextFieldGroup> {
-	}
-
-	private static final Binder binder = GWT.create(Binder.class);
-
 	private String label;
 
-	@UiField
 	FlexTable fieldGroupTable;
 
 	private List<TextBox> fields = new ArrayList<TextBox>();
 
 	public TextFieldGroup(){
-		initWidget(binder.createAndBindUi(this));
+        fieldGroupTable = new FlexTable();
 		setLabel(null);
+        initWidget(fieldGroupTable);
 	}
 
 	public String getLabel() {

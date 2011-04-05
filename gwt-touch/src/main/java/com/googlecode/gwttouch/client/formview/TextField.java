@@ -1,26 +1,17 @@
 package com.googlecode.gwttouch.client.formview;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 
 
-public class TextField extends Composite {
+public class TextField extends Composite implements HasText {
 
-	interface Binder extends UiBinder<HorizontalPanel, TextField> {
-	}
-
-	private static final Binder binder = GWT.create(Binder.class);
-
-	@UiField
 	Label labelField;
 
-	@UiField
 	TextBox textBox;
 
 	private String label;
@@ -30,8 +21,17 @@ public class TextField extends Composite {
 	private String text;
 
 	public TextField(){
-		initWidget(binder.createAndBindUi(this));
-		labelField.setVisible(false);
+		HorizontalPanel horizontalPanel = new HorizontalPanel();
+
+        labelField = new Label();
+        labelField.setVisible(false);
+
+        textBox = new TextBox();
+
+        horizontalPanel.add(labelField);
+        horizontalPanel.add(textBox);
+
+        initWidget(horizontalPanel);
 	}
 
 	public String getLabel() {
