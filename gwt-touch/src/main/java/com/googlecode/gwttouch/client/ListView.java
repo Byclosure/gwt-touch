@@ -148,8 +148,11 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 		switch(e.getTypeInt()) {
 		case Event.ONCLICK :
 
+			if(e.getRelatedEventTarget()==null)
+				return;
+			
 			Element target = com.google.gwt.user.client.Element.as(e.getRelatedEventTarget().cast());
-			if(DOM.isOrHasChild(listPanel.getElement(), (com.google.gwt.user.client.Element) target)){
+			if(target!=null && DOM.isOrHasChild(listPanel.getElement(), (com.google.gwt.user.client.Element) target)){
 				Element itemElement = target;
 				while(itemElement!=null) {
 					if(itemElement.hasAttribute("__id")) {

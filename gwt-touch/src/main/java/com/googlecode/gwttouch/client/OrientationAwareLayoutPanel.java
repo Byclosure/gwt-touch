@@ -83,7 +83,7 @@ public class OrientationAwareLayoutPanel extends ComplexPanel implements
 	
 	private final native void addOrientationHandler() /*-{
 		$wnd.addEventListener('orientationchange', new function(){
-			this.@com.bradrydzewski.gwt.touch.client.OrientationAwareLayoutPanel::onOrientation();
+			this.@com.googlecode.gwttouch.client.OrientationAwareLayoutPanel::onOrientation();
 		}, false);
 	}-*/;
 	
