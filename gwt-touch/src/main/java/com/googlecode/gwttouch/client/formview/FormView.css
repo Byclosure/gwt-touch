@@ -84,10 +84,13 @@
 	right:0px;
 	padding-left:10px !IMPORTANT;
 	padding-right:10px !IMPORTANT;
-	border:0px solid transparent;
+	border-style: none;
+	outline:none;
+	border-width:0px;
 	-webkit-user-select: text !IMPORTANT;
 	font-size:16px;
 	font-weight:bold;
 	border-radius:5px;
 	background:#FFF;
+	background-image:none !IMPORTANT;
 }
