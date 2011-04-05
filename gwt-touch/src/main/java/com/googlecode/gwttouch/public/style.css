@@ -1,0 +1,245 @@
+* {
+    margin: 0 !IMPORTANT;
+    padding: 0 !IMPORTANT;
+}
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    /* for ios only */
+    font-family: 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans', sans-serif;
+}
+
+*:focus {
+	outline: none;
+}
+
+.touchScrollBar,
+.touchScrollBar-hide {
+	position:absolute;
+	width:6px;
+	right:5px;
+	background:#666;
+	opacity:0.0;
+	z-index:10;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition-property: opacity, height;
+	-webkit-transition-duration: 1s, .1s;
+	-webkit-transition-delay: .2s, 0s;
+	
+}
+
+.touchScrollBar-show {
+	position:absolute;
+	width:6px;
+	right:5px;
+	background:#666;
+	opacity:0.5;
+	z-index:10;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-delay: 0s;
+}
+
+
+/* ListView component */
+
+.touchListView {
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	background:rgb(232,234,235)
+}
+
+.touchListViewItemWrapper {
+	background:transparent;
+	color:#000;
+	-webkit-user-select: none;
+	border-top:1px solid rgb(228,230,233);
+	border-bottom:1px solid #D1D1D1;
+	text-shadow: 1px 1px #FFF;
+}
+
+.touchListViewItemWrapper-Selected {
+	/*background:-webkit-gradient(linear,0% 0,0% 100%,color-stop(0%,#167BF3),color-stop(2%,#084B9B),color-stop(100%,#042348));*/
+	background:-webkit-gradient(linear,0% 0,0% 100%,color-stop(0%,rgb(5,140,245)),color-stop(100%,rgb(1,93,230)));
+	
+	color:#FFF;
+	text-shadow:  rgba(0, 0, 0, 0.5) 0px -1px 0px ;
+	-webkit-user-select: none;
+	border-bottom:1px solid rgb(1,93,230);
+	border-top:1px solid rgb(5,140,245);
+}
+
+
+.touchListViewItem {
+	padding: 0px 10px !IMPORTANT;
+	vertical-align:middle;
+	font-size: 16px;
+	font-weight:bold;
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	white-space:nowrap;
+	-webkit-user-select: none;
+	pointer-events:none;
+}
+
+.touchListViewItem div {
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	-webkit-user-select: none;
+	user-select: none;
+	pointer-events:none;
+}
+
+/* Header */
+
+.gwtTouch-Header {
+	background:-webkit-gradient(linear,0% 0,0% 100%,color-stop(0%,rgb(244,245,247)),color-stop(100%,rgb(158,172,185)));
+	border-bottom:1px solid rgb(121,127,144);
+	border-top:1px solid rgb(255,255,255);
+	color: rgb(113,120,128);
+	text-shadow: 1px 1px rgb(230,231,235);
+	font-size:20px;
+	font-weight:bold;
+	line-height:45px;
+	padding:0px 10px !IMPORTANT;
+	overflow:ellipsis;
+	vertical-align:middle;
+	text-align:center;
+}
+
+/* Field Set */
+
+.gwtTouch-MenuLayout {
+	border: 1px solid rgb(184, 187, 191);
+	border-radius:5px;	
+	-webkit-border-radius:5px;
+	background-color:#FFF;
+	box-shadow: 1px 1px #FFF;
+	margin-bottom: 25px !IMPORTANT;
+}
+
+.gwtTouch-FieldTextItem {
+	display:block;
+	border-top:1px solid rgb(184, 187, 191);
+	padding:10px 10px !IMPORTANT;
+	font-weight:bold;
+	font-size:16px;
+	position:relative;
+}
+
+.gwtTouch-FieldButtonItem:first-child,
+.gwtTouch-FieldTextItem:first-child {
+	border-top:1px solid transparent !IMPORTANT;
+}
+
+
+.gwtTouch-FieldCheckItem {
+	position:relative;
+	overflow:hidden;
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:10px;
+}
+
+.gwtTouch-FieldCheckItem input[type="radio"],
+.gwtTouch-FieldCheckItem input[type="checkbox"] {
+	-khtml-appearance: none;
+	-webkit-appearance: none;
+	border:0px;
+	background-color:transparent;
+	z-index:1;
+	position: absolute;
+	width:100%;
+	height:100%;
+	color:#FFF;
+	-webkit-touch-callout:none;
+}
+
+.gwtTouch-FieldCheckItem input[type="radio"]:checked,
+.gwtTouch-FieldCheckItem input[type="checkbox"]:checked {
+	background-color:transparent;
+	width: 100%;
+	height: 100%;
+	color:#FFF;
+	-khtml-appearance: none;
+	-webkit-appearance: none;
+	background-repeat: no-repeat;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sEAwERN7m+o0oAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAASBJREFUOMtjYBhowEiKYuug1v8vX71nYGBgYLhzpIeRgYGBgYlYzdXda5fBNNtbacPFmYk14NVvhTX///1nYGdnZdi5pATucqJcEJEz/f/fP/8YGBgYGGJDbOJJDgMVm5L/DAwMDOJiggxH11Wj6GEiJuBgbHTNcANCs6b9V7Ep+a/vVv0fWbJj+tY4WMCZGChjtYCJgYGBQUNZYg4DAwPD128/GaLyZsINWbzmyEIGBgYGVjYWhhVTMhlxGtBcHJQqLSXCwMDAwHDq3G0GBgYGhuSy+f9//vzNwMDAwBAfahtPVEJSdyj7//fPPwZ2dlYGmGZsAYczECP9rXsYGBjgmnEFHE4DGgr9S5XkxeF8XAFHEOi7Vf838Kj9T5fcCAAMrVshRryecAAAAABJRU5ErkJggg==");
+	background-position: right 50%;
+	border:0px;
+}
+
+
+.gwtTouch-FieldOnOffItem {
+	position:relative;
+	overflow:hidden;
+	display:block;
+	position:absolute;
+	top:7px;
+	right:5px;
+	width:95px;
+	height:27px;
+}
+
+.gwtTouch-FieldOnOffItem input[type="checkbox"] {
+	background-color:transparent;
+	width: 95px;
+	height: 27px;
+	color:#FFF;
+	-khtml-appearance: none;
+	-webkit-appearance: none;
+	background-repeat: no-repeat;
+	background-image: url("checkbox.png");
+	background-position: 0px 0px;
+	border:0px;
+}
+
+.gwtTouch-FieldOnOffItem input[type="checkbox"]:checked {
+	background-color:transparent;
+	width: 95px;
+	height: 27px;
+	color:#FFF;
+	-khtml-appearance: none;
+	-webkit-appearance: none;
+	background-repeat: no-repeat;
+	background-image: url("checkbox.png");
+	background-position: 0px -27px;
+	border:0px;
+}
+
+/** Button Field **/
+
+.gwtTouch-FieldButtonItem {
+	border:0px;
+	background:transparent;
+	text-align:center;
+	display:block;
+	border-top:1px solid rgb(184, 187, 191);
+	padding:10px 10px !IMPORTANT;
+	font-weight:bold;
+	font-size:16px;
+	position:relative;
+	width:100%;
+}
+
+.gwtTouch-FieldArrowButtonItem {
+	text-align:left;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAQCAYAAAAI0W+oAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sEAxUwIzTUaXgAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAPlJREFUOMvl0iGOhDAUBuCfSRAEwQUQODTZPcIcYU5QQbjBWgzJSAwlGCzcYeYIk6ARTZqmAkMgGERFVy3ZbFgMNZv93Wvz+vWlBf5NsizTXddpU+dZe4tpmuphGGDbNgghiKLIOgtdfi4IIe7rugIAlFKo6xomJtu9qRDiTin9mOcZAIxM9mujlPJaFMVjmiYj2GGTlPJaluVjHMfT2OVo0/f95+1222qlFNq2NfMZvocxppum2WrXdUEIMftGjDFdVRWWZdmQOI4RhqFlbCLO+csksgtxzl+U0rcvxHGc08guFATBu+d5G5IkyWnkMHme677vNf5aPgG+8G2wtapREwAAAABJRU5ErkJggg==");
+	background-position: right 50%;
+	background-repeat: no-repeat;
+	
+}
