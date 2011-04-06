@@ -192,11 +192,16 @@ public class TouchPanel extends SimplePanel implements RequiresResize, ProvidesR
 				Document.get().createMouseEvent("click",true, true,0, event.getScreenX(), event.getScreenY(), event.getClientX(), event.getClientY(), false, false, false, false, NativeEvent.BUTTON_LEFT, target);
 
 			if(event.getTypeInt()==Event.ONTOUCHEND) {
+				target.focus();
 				target.dispatchEvent(clickEvent);
+//				target.focus();
 			} else if(!"INPUT".equals(target.getNodeName()) && 
 					!"SELECT".equals(target.getNodeName()) &&
 					!"A".equals(target.getNodeName()) ) {
+				
 				target.dispatchEvent(clickEvent);
+			} else {
+				target.focus();
 			}
 
 			scroller.hide();
@@ -206,10 +211,10 @@ public class TouchPanel extends SimplePanel implements RequiresResize, ProvidesR
 	
 	protected void onTouchStart(Event e) {
 		
-		Element target = DOM.eventGetTarget(e);
-		if("INPUT".equals(target.getNodeName())) {
-			return;
-		}
+//		Element target = DOM.eventGetTarget(e);
+//		if("INPUT".equals(target.getNodeName())) {
+//			return;
+//		}
 		
 			e.preventDefault();
 			e.stopPropagation();
