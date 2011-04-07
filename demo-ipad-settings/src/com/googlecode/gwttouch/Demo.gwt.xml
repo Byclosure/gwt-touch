@@ -2,6 +2,9 @@
 <module rename-to="demo">
   <inherits name="com.google.gwt.user.User" />
   <inherits name="com.google.gwt.user.UserAgent"/>
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
+
   <inherits name="com.googlecode.gwttouch.Touch"/>
   <entry-point class="com.googlecode.gwttouch.client.SettingsEntryPoint" />
   <source path="client" /> 

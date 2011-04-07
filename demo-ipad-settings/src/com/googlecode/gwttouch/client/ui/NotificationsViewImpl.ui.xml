@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:t="urn:import:com.googlecode.gwttouch.client"
+	xmlns:m="urn:import:com.googlecode.gwttouch.client.menuview" 
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.center { 
+			background:rgb(232,234,235);
+		}
+		.centerInner { 
+			background:rgb(232,234,235);
+			padding:20px 20px !IMPORTANT;
+		}
+	</ui:style>
+	<g:DockLayoutPanel unit="PX">
+		<g:north size="45">
+			<g:HTMLPanel styleName="gwtTouch-Header">
+				Notifications
+			</g:HTMLPanel>
+		</g:north>
+		<g:center>
+			<t:TouchPanel styleName="{style.center}">
+				<g:HTMLPanel styleName="{style.centerInner}">
+					<m:MenuView footer="Turn off Notifications to disable Sounds, Alerts and Home Screen Badges for the applications below.">
+						<m:SwitchMenuItem>Notifications</m:SwitchMenuItem>
+					</m:MenuView>
+				</g:HTMLPanel>
+			</t:TouchPanel>
+		</g:center>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 

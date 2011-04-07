@@ -1,0 +1,47 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
+	xmlns:t="urn:import:com.googlecode.gwttouch.client"
+	xmlns:m="urn:import:com.googlecode.gwttouch.client.menuview" 
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.center { 
+			background:rgb(232,234,235);
+		}
+		.centerInner { 
+			background:rgb(232,234,235);
+			padding:20px 20px !IMPORTANT;
+		}
+	</ui:style>
+	<g:DockLayoutPanel unit="PX">
+		<g:north size="45">
+			<g:HTMLPanel styleName="gwtTouch-Header">
+				Wifi
+			</g:HTMLPanel>
+		</g:north>
+		<g:center>
+			<t:TouchPanel styleName="{style.center}">
+				<g:HTMLPanel styleName="{style.centerInner}">
+		
+		
+					<m:MenuView>
+						<m:SwitchMenuItem value="true">Wi-Fi</m:SwitchMenuItem>
+					</m:MenuView>
+					<m:MenuView header="Choose a Network...">
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">belkin54g</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">Comcast Sucks</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">DontTaseMeBro</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">Hollaback</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">Linksys</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">MyNeighborsSuck</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">Netgear</m:OneLineMenuItem>
+						<m:OneLineMenuItem accessory="DETAIL_DISCLOSURE">OJ is Innocent</m:OneLineMenuItem>
+					</m:MenuView>
+					<m:MenuView footer="Knows networks will be joined automatically. If no known networks are available, you will be asked before joining a new network">
+						<m:SwitchMenuItem>Ask to Join Networks</m:SwitchMenuItem>
+					</m:MenuView>
+		
+				</g:HTMLPanel>
+			</t:TouchPanel>
+		</g:center>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 
