@@ -6,6 +6,7 @@
 	border: 1px solid rgb(184, 187, 191);
 	border-radius:5px;	
 	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
 	background-color:#FFF;
 	box-shadow: 1px 1px #FFF;
 	margin-bottom: 25px !IMPORTANT;
@@ -131,7 +132,9 @@
 }
 
 .gwtTouch-OneLineMenuItem-TextLabel {
-
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .gwtTouch-OneLineMenuItem-SubTextLabel {
@@ -140,7 +143,37 @@
 	font-weight:normal;
 	font-size:16px;
 	padding-right:3px !IMPORTANT;
-	padding-top:1px !IMPORTANT
+	padding-top:1px !IMPORTANT;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.gwtTouch-MenuItem-Image {
+	width:40px;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	top:0px;
+	overflow:hidden;
+	background-position:center center;
+	overflow:hidden;
+}
+
+.gwtTouch-OneLineMenuItem:first-child .gwtTouch-MenuItem-Image {
+	border-top-left-radius:5px;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-radius-topleft: 5px;
+}
+
+.gwtTouch-OneLineMenuItem:last-child .gwtTouch-MenuItem-Image {
+	border-bottom-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft: 5px;
+}
+
+.gwtTouch-MenuItem-HasImage {
+	padding-left:50px !IMPORTANT;	
 }
 
 @sprite .gwtTouch-MenuItem-Chevron {

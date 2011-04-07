@@ -1,9 +1,12 @@
 package com.googlecode.gwttouch.client.menuview;
 
+import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasText;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.SimplePanel;
 import com.googlecode.gwttouch.client.CellAccessory;
 
 public class OneLineMenuItem extends Composite
@@ -12,6 +15,7 @@ public class OneLineMenuItem extends Composite
 	protected FlowPanel root = new FlowPanel();
 	protected Label textLabel = new Label();
 	protected Label subTextLabel = new Label();
+	protected SimplePanel imagePanel;
 	
 	public OneLineMenuItem() {
 		initWidget(root);
@@ -43,7 +47,20 @@ public class OneLineMenuItem extends Composite
 		subTextLabel.setText(text);
 	}
 	
+	public void setImage(ImageResource imageRes) {
+		this.setImage(new Image(imageRes.getURL()));
+	}
 	
+	private void setImage(Image image) {
+		if(imagePanel==null) {
+			imagePanel = new SimplePanel();
+			imagePanel.setStyleName("gwtTouch-MenuItem-Image");
+			root.addStyleName("gwtTouch-MenuItem-HasImage");
+		}
+		imagePanel.getElement().getStyle().setBackgroundImage("url(\""+image.getUrl()+"\")");
+		root.add(imagePanel);
+	
+	}
 	
 	public void setAccessory(CellAccessory accessory) {
 		if(accessory==CellAccessory.DISCLOSURE_INDICATOR) {
