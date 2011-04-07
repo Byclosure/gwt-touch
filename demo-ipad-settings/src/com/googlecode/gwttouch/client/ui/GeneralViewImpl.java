@@ -5,19 +5,18 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.ResizeComposite;
 import com.google.gwt.user.client.ui.Widget;
 
-public class NotificationsViewImpl extends ResizeComposite implements NotificationsView {
+public class GeneralViewImpl extends ResizeComposite implements GeneralView {
 
-	private static NotificationsViewImplUiBinder uiBinder = GWT
-			.create(NotificationsViewImplUiBinder.class);
+	private static GeneralViewImplUiBinder uiBinder = GWT
+			.create(GeneralViewImplUiBinder.class);
 
-	interface NotificationsViewImplUiBinder extends
-			UiBinder<Widget, NotificationsViewImpl> {
+	interface GeneralViewImplUiBinder extends UiBinder<Widget, GeneralViewImpl> {
 	}
 
 	@SuppressWarnings("unused")
 	private Presenter listener;
-
-	public NotificationsViewImpl() {
+	
+	public GeneralViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
@@ -25,4 +24,5 @@ public class NotificationsViewImpl extends ResizeComposite implements Notificati
 	public void setPresenter(Presenter listener) {
 		this.listener = listener;
 	}
+
 }

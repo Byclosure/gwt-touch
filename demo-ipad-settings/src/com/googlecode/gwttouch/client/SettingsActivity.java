@@ -10,8 +10,10 @@ import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
+import com.googlecode.gwttouch.client.activity.GeneralActivity;
 import com.googlecode.gwttouch.client.activity.NotificationActivity;
 import com.googlecode.gwttouch.client.activity.WifiActivity;
+import com.googlecode.gwttouch.client.place.GeneralPlace;
 import com.googlecode.gwttouch.client.place.NotificationsPlace;
 import com.googlecode.gwttouch.client.place.WifiPlace;
 import com.googlecode.gwttouch.client.resources.Resources;
@@ -72,6 +74,8 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 			goTo(new WifiPlace());
 		} else if("Notifications".equals(category.getName())) {
 			goTo(new NotificationsPlace());
+		} else if("General".equals(category.getName())) {
+			goTo(new GeneralPlace());
 		}
 	}
 
@@ -87,7 +91,8 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 			activity = new NotificationActivity(clientFactory);
 			view.setSelectedCategory(categoryList.get(1));
 		} else {
-			//set activity to general
+			activity = new GeneralActivity(clientFactory);
+			view.setSelectedCategory(categoryList.get(4));
 		}
 
 		return activity;

@@ -3,6 +3,8 @@ package com.googlecode.gwttouch.client;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.PlaceController;
+import com.googlecode.gwttouch.client.ui.GeneralView;
+import com.googlecode.gwttouch.client.ui.GeneralViewImpl;
 import com.googlecode.gwttouch.client.ui.NotificationsView;
 import com.googlecode.gwttouch.client.ui.NotificationsViewImpl;
 import com.googlecode.gwttouch.client.ui.WifiView;
@@ -15,7 +17,8 @@ public class ClientFactoryImpl implements ClientFactory {
 	private static final SettingsView settingsView = new SettingsViewImpl();
 	private static final NotificationsView notificationsView = new NotificationsViewImpl();
 	private static final WifiView wifiView = new WifiViewImpl();
-	
+	private static final GeneralView generalView = new GeneralViewImpl();
+		
 	public ClientFactoryImpl() {
 		
 	}
@@ -43,6 +46,11 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public WifiView getWifiView() {
 		return wifiView;
+	}
+
+	@Override
+	public GeneralView getGeneralView() {
+		return generalView;
 	}
 	
 }

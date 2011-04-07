@@ -6,7 +6,7 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
-import com.googlecode.gwttouch.client.place.WifiPlace;
+import com.googlecode.gwttouch.client.place.GeneralPlace;
 import com.googlecode.gwttouch.client.ui.SimpleResizePanel;
 
 /**
@@ -14,7 +14,7 @@ import com.googlecode.gwttouch.client.ui.SimpleResizePanel;
  */
 public class SettingsEntryPoint implements EntryPoint {
 
-	private Place defaultPlace = new WifiPlace();// new GeneralPlace();
+	private Place defaultPlace = new GeneralPlace();
 
 	/**
 	 * This is the entry point method.
