@@ -12,9 +12,11 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.googlecode.gwttouch.client.activity.GeneralActivity;
 import com.googlecode.gwttouch.client.activity.NotificationActivity;
+import com.googlecode.gwttouch.client.activity.PictureFrameActivity;
 import com.googlecode.gwttouch.client.activity.WifiActivity;
 import com.googlecode.gwttouch.client.place.GeneralPlace;
 import com.googlecode.gwttouch.client.place.NotificationsPlace;
+import com.googlecode.gwttouch.client.place.PictureFramePlace;
 import com.googlecode.gwttouch.client.place.WifiPlace;
 import com.googlecode.gwttouch.client.resources.Resources;
 
@@ -70,11 +72,14 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 
 	@Override
 	public void onCategorySelected(SettingsCategory category) {
+		//TODO: this is a very ugly if/else block. do something
 		if("Wi-Fi".equals(category.getName())) {
 			goTo(new WifiPlace());
 		} else if("Notifications".equals(category.getName())) {
 			goTo(new NotificationsPlace());
-		} else if("General".equals(category.getName())) {
+		} else if("Picture Frame".equals(category.getName())) {
+			goTo(new PictureFramePlace());
+		}  else if("General".equals(category.getName())) {
 			goTo(new GeneralPlace());
 		}
 	}
@@ -90,7 +95,10 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 		} else if(place instanceof NotificationsPlace) {
 			activity = new NotificationActivity(clientFactory);
 			view.setSelectedCategory(categoryList.get(1));
-		} else {
+		} else if(place instanceof PictureFramePlace) {
+			activity = new PictureFrameActivity(clientFactory);
+			view.setSelectedCategory(categoryList.get(3));
+		}  else {
 			activity = new GeneralActivity(clientFactory);
 			view.setSelectedCategory(categoryList.get(4));
 		}

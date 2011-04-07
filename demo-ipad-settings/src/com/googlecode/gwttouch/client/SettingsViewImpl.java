@@ -62,28 +62,8 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 			}
 		});
 
-		
-//		List<SettingsCategory> categoryList =
-//			new ArrayList<SettingsCategory>();
-//		categoryList.add(new SettingsCategory("Wi-Fi",Resources.INSTANCE.settingsWifi()));
-//		categoryList.add(new SettingsCategory("Notifications",Resources.INSTANCE.settingsNotifications()));
-////		categoryList.add(new SettingsCategory("Location Services",Resources.INSTANCE.settingsLocation()));
-////		categoryList.add(new SettingsCategory("Cellular Data",Resources.INSTANCE.settingsCellular()));
-//		categoryList.add(new SettingsCategory("Brightness & Wallpaper",Resources.INSTANCE.settingsWallpaper()));
-//		categoryList.add(new SettingsCategory("Picture Frame",Resources.INSTANCE.settingsPictureFrame()));
-//		categoryList.add(new SettingsCategory("General",Resources.INSTANCE.settingsGeneral()));
-//		categoryList.add(new SettingsCategory("Mail, Contacts, Calendars",Resources.INSTANCE.settingsEmail()));
-//		categoryList.add(new SettingsCategory("Safari",Resources.INSTANCE.settingsSafari()));
-//		categoryList.add(new SettingsCategory("iPod",Resources.INSTANCE.settingsIPod()));
-//		categoryList.add(new SettingsCategory("Video",Resources.INSTANCE.settingsVideo()));
-//		categoryList.add(new SettingsCategory("Photos",Resources.INSTANCE.settingsPhotos()));
-////		categoryList.add(new SettingsCategory("FaceTime",Resources.INSTANCE.settingsFaceTime()));
-//		categoryList.add(new SettingsCategory("Notes",Resources.INSTANCE.settingsNotes()));
-//		categoryList.add(new SettingsCategory("Store",Resources.INSTANCE.settingsAppstore()));
-
 		list.setSelectionModel(selectionModel);
 		dataProvider.addDataDisplay(list);
-//		dataProvider.setList(categoryList);
 	}
 	
 	public void onCategroySelected(SettingsCategory category) {
@@ -114,9 +94,4 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 	public void setCategoryList(List<SettingsCategory> list) {
 		dataProvider.setList(list);
 	}
-
-
-
-
-
 }

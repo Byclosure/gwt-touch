@@ -7,6 +7,8 @@ import com.googlecode.gwttouch.client.ui.GeneralView;
 import com.googlecode.gwttouch.client.ui.GeneralViewImpl;
 import com.googlecode.gwttouch.client.ui.NotificationsView;
 import com.googlecode.gwttouch.client.ui.NotificationsViewImpl;
+import com.googlecode.gwttouch.client.ui.PictureFrameView;
+import com.googlecode.gwttouch.client.ui.PictureFrameViewImpl;
 import com.googlecode.gwttouch.client.ui.WifiView;
 import com.googlecode.gwttouch.client.ui.WifiViewImpl;
 
@@ -18,7 +20,8 @@ public class ClientFactoryImpl implements ClientFactory {
 	private static final NotificationsView notificationsView = new NotificationsViewImpl();
 	private static final WifiView wifiView = new WifiViewImpl();
 	private static final GeneralView generalView = new GeneralViewImpl();
-		
+	private static final PictureFrameView pictureFrameView = new PictureFrameViewImpl();
+	
 	public ClientFactoryImpl() {
 		
 	}
@@ -51,6 +54,11 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public GeneralView getGeneralView() {
 		return generalView;
+	}
+
+	@Override
+	public PictureFrameView getPictureFrameView() {
+		return pictureFrameView;
 	}
 	
 }
