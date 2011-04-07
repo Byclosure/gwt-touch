@@ -26,6 +26,8 @@ import com.google.gwt.view.client.SelectionModel;
 
 public class ListView<T> extends ResizeComposite implements HasData<T> {
 
+	
+	
 	static class ListViewCell<T> extends AbstractCell<T> {
 		@Override
 		public void render(Context context, T value, SafeHtmlBuilder sb) {
@@ -35,13 +37,14 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 			}
 		      
 			sb.appendHtmlConstant("<div class='touchListViewItem'>");
-//			sb.append(context.getIndex());
 			sb.appendHtmlConstant("<div>");
 			sb.appendEscaped(value.toString());
 			sb.appendHtmlConstant("</div></div>");
 
 		}
 	}
+	
+	
 
 	private final Scheduler.ScheduledCommand redrawCommand = new Scheduler.ScheduledCommand() {
 		@Override

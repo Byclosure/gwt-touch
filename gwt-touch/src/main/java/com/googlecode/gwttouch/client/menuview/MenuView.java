@@ -50,4 +50,20 @@ public class MenuView extends Composite implements HasWidgets.ForIsWidget {
 	public boolean remove(IsWidget w) {
 		return panel.remove(w);
 	}
+	
+	public void setHeader(String text) {
+		
+	}
+	
+	public String getHeader() {
+		return "";
+	}
+	
+	public void setFooter(String text) {
+		
+	}
+	
+	public String getFooter() {
+		return "";
+	}
 }
