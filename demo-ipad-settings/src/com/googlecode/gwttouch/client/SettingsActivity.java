@@ -86,7 +86,7 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 
 	@Override
 	public Activity getActivity(Place place) {
-		
+
 		Activity activity = null;
 
 		if(place instanceof WifiPlace) {
