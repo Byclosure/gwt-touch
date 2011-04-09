@@ -267,7 +267,7 @@ public class TouchPanel extends SimplePanel implements RequiresResize, ProvidesR
 		e.preventDefault();
 //		e.stopPropagation();
 		
-		scroller.calcLocationY();
+//		scroller.calcLocationY();
 
 		JsArray<Touch> touches = e.getTouches();
 		int dy;
@@ -294,10 +294,14 @@ public class TouchPanel extends SimplePanel implements RequiresResize, ProvidesR
 //				dy = maxHeight;
 //			}
 //		}
-
+//System.out.println(movedY + " = " + dy + " - " + scrollY);
+		//we divide by 2 to slow things down
+//		dy/=2;
 		movedY = dy - scrollY;
 		moved = true;
 		setPosition(dy);
+
+		scroller.calcLocationY();
 	}
 	
 	protected void setPosition(int y) {
