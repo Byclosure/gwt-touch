@@ -53,12 +53,11 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 		}
 	};
 
-	private final HTML listPanel;
-	private final Cell<T> cell;
-	private final TouchPanel root;
-	private List<? extends T> values;
-	private SelectionModel<? super T> selectionModel;
-//	private int selectedIndex = -1;
+	protected final HTML listPanel;
+	protected final Cell<T> cell;
+	protected final TouchPanel root;
+	protected List<? extends T> values;
+	protected SelectionModel<? super T> selectionModel;
 
 	public ListView() {
 		this(new ListViewCell<T>());
