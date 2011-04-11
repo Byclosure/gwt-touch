@@ -23,6 +23,7 @@ import com.google.gwt.view.client.RangeChangeEvent.Handler;
 import com.google.gwt.view.client.RowCountChangeEvent;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SelectionModel;
+import com.googlecode.gwttouch.client.listview.ListViewResources;
 
 public class ListView<T> extends ResizeComposite implements HasData<T> {
 
@@ -64,6 +65,10 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 	}
 	
 	public ListView(Cell<T> cell) {
+		
+		//ensure style sheet loaded
+		ListViewResources.INSTANCE.css().ensureInjected();
+		
 		this.root = new TouchPanel();
 		this.cell = cell;
 		

@@ -200,6 +200,7 @@ public class TouchPanel extends SimplePanel implements RequiresResize, ProvidesR
 					!"A".equals(target.getNodeName()) ) {
 				
 				target.dispatchEvent(clickEvent);
+				
 			} else {
 				target.focus();
 			}
