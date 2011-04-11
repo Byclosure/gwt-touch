@@ -1,0 +1,98 @@
+@external .gwtTouch-*;
+
+/* IndexedListView component */
+
+.gwtTouch-IndexedListView {
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	background:#FFF;
+}
+
+.gwtTouch-IndexedListView-ItemWrapper {
+	background:transparent;
+	color:#000;
+	-webkit-user-select: none;
+	border-top:1px solid transparent;
+	border-bottom: 1px solid #ADAAAD;
+	text-shadow: 1px 1px #FFF;
+}
+
+.gwtTouch-IndexedListView-ItemWrapper-Selected {
+	/*background:-webkit-gradient(linear,0% 0,0% 100%,color-stop(0%,#167BF3),color-stop(2%,#084B9B),color-stop(100%,#042348));*/
+	/*background:-webkit-gradient(linear,0% 0,0% 100%,color-stop(0%,rgb(5,140,245)),color-stop(100%,rgb(1,93,230)));*/
+	background: literal("-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(5,140,245)), to(rgb(1,93,230)))");
+	color:#FFF;
+	text-shadow:  rgba(0, 0, 0, 0.5) 0px -1px 0px ;
+	-webkit-user-select: none;
+	border-bottom:1px solid rgb(1,93,230);
+	border-top:1px solid rgb(5,140,245);
+}
+
+
+.gwtTouch-IndexedListView-Item {
+	padding: 0px 10px !IMPORTANT;
+	vertical-align:middle;
+	font-size: 16px;
+	font-weight:normal;
+	height:42px;
+	line-height:42px;
+	overflow:hidden;
+	white-space:nowrap;
+	-webkit-user-select: none;
+	pointer-events:none;
+}
+
+.gwtTouch-IndexedListView-Item div {
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	-webkit-user-select: none;
+	user-select: none;
+	pointer-events:none;
+}
+
+.gwtTouch-IndexedListView-Group {
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	-webkit-user-select: none;
+	user-select: none;
+	pointer-events:none;
+
+	font-size:16px;
+	font-weight:bold;
+	color: #FFF;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0px;
+	border-top: 1px solid #A4B0B9;
+	border-bottom: 1px solid #979DA3;
+	height: 20px;
+	line-height:20px;
+	padding: 0px 10px !IMPORTANT;
+	
+	background: literal("-webkit-gradient(linear, left top, left bottom, from(#8F9EA9), to(#B7C0C7))");
+}
+
+
+.gwtTouch-IndexedListView-Menu {
+	position:absolute;
+	top:5px;
+	bottom:5px;
+	right:5px;
+	width:14px;
+	padding:4px 0px !IMPORTANT;
+	
+	background: rgba(255,255,255,.5);
+	color:#000;
+	font-size:12px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	overflow:hidden;
+}
+
+.gwtTouch-IndexedListView-Menu div {
+	cursor:pointer;
+	padding:2px 0px !IMPORTANT;
+	text-align:center;
+}
