@@ -12,8 +12,6 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
 	
 	private FlowPanel root = new FlowPanel();
 	
-	private IsWidget currentlyViewedWidget;
-	
 	public SimpleTransitionPanel() {
 		initWidget(root);
 		root.getElement().getStyle().setHeight(100, Unit.PCT);
@@ -29,28 +27,28 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
 	
 	@Override
 	public void setWidget(IsWidget w) {
-		if (currentlyViewedWidget == w || isBetweenChangeFromOneViewToAnother(w)) {
+		if (isBetweenChangeFromOneViewToAnother(w)) {
 			return;
 		} else if ( isTransitionToANewWidget(w) ) {
 			root.add(w);
 			animateWidgets();
-			currentlyViewedWidget = w;
 		} else if ( w != null && root.getWidgetCount() == 0){
 			root.add(w);
-			currentlyViewedWidget = w;
 		}
 	}
 	
 	private void animateWidgets(){
 		root.getElement().getStyle().setHeight(100, Unit.PCT);
-		
+		if ( root.getWidgetCount() > 2 ) {
+			root.remove(0);
+		}
 		Widget newCard = root.getWidget(root.getWidgetCount() - 1);
 		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		Animation from = SlideAnimation.newMoveToOriginAnimation(newCard.getElement(), this, "right", false, false, false);
+		Animation from = SlideAnimation.newMoveToOriginAnimation(newCard.getElement(), this, "left", false, false, false);
 		from.run();
 		
 		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		final Animation to = SlideAnimation.newMoveToDestinationAnimation(newCard.getElement(), this, "right", false, false, false);
+		final Animation to = SlideAnimation.newMoveToDestinationAnimation(newCard.getElement(), this, "left", false, false, false);
 		Timer t = new Timer() {
 		      public void run() {
 		    	  to.run();
@@ -60,17 +58,17 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
 		
 		Widget oldCard = root.getWidget(Math.max(root.getWidgetCount() - 2, 0));
 		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		Animation oldCardFrom = SlideAnimation.newMoveToOriginAnimation(oldCard.getElement(), this, "right", false, false, true);
+		Animation oldCardFrom = SlideAnimation.newMoveToOriginAnimation(oldCard.getElement(), this, "left", false, false, true);
 		oldCardFrom.run();
 		
 		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		final Animation oldCardTo = SlideAnimation.newMoveToDestinationAnimation(oldCard.getElement(), this, "right", false, false, true);
+		final Animation oldCardTo = SlideAnimation.newMoveToDestinationAnimation(oldCard.getElement(), this, "left", false, false, true);
 		Timer oldCardTimer = new Timer() {
 		      public void run() {
 		    	  oldCardTo.run();
 		      }
 		};
-		oldCardTimer.schedule(5);		
+		oldCardTimer.schedule(5);
 	}
 	
 	public final native void addTransitionEndHandler(final com.google.gwt.user.client.Element e, final SimpleTransitionPanel containerPanel) /*-{
