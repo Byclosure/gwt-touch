@@ -101,6 +101,10 @@ body {
 	pointer-events:none;
 }
 
+/* Index List View */
+
+
+
 /* Header */
 
 .gwtTouch-Header {
@@ -242,4 +246,53 @@ body {
 	background-position: right 50%;
 	background-repeat: no-repeat;
 	
+}
+
+
+
+
+
+
+/** TabBar style overrides go here **/
+
+.gwt-TabBar {
+	user-select:none;
+	-webkit-user-select:none;
+}
+
+.gwt-TabBar td:nth-child(2) .gwt-TabBarItem {
+	border-left:1px solid #ababab;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+}
+
+.gwt-TabBar td:nth-last-child(2) .gwt-TabBarItem {
+	border-right:1px solid #ababab;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+
+.gwt-TabBarItem {
+	border-top:1px solid #ababab;
+	border-bottom:1px solid #ababab;
+	border-right:1px solid #ababab;
+	padding:10px !IMPORTANT;
+	user-select:none;
+	-webkit-user-select:none;
+	cursor:pointer;
+	box-shadow:1px 1px #ebedf0;
+	color: #7f7f7f;
+	text-shadow: 1px 1px #FFF;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fbfbfb), to(#c8c8c8));
+	font-weight:bold;
+}
+
+.gwt-TabBarItem-selected {
+	background:#70aafc;
+	color:#FFF;
+	border-color: #4e88d8;
+	text-shadow:none;
+
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2857a8), to(#70aafc))
 }
