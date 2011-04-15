@@ -1,20 +1,25 @@
 package com.googlecode.gwttouch.client.transitions;
 
+import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.user.client.ui.ProvidesResize;
+import com.google.gwt.user.client.ui.RequiresResize;
 import com.google.gwt.user.client.ui.Widget;
 
-public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget{
+public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget, RequiresResize, ProvidesResize{
 	
 	private FlowPanel root = new FlowPanel();
 	
 	public SimpleTransitionPanel() {
 		initWidget(root);
-		root.getElement().getStyle().setHeight(100, Unit.PCT);
+//		root.getElement().getStyle().setHeight(100, Unit.PCT);
+		//TODO: discuss this change w/ Carlos, and why I did it
+		dock(root);
 	}
 	
 	private boolean isBetweenChangeFromOneViewToAnother(IsWidget w){
@@ -27,7 +32,11 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
 	
 	@Override
 	public void setWidget(IsWidget w) {
+
+		dock(w);
+		
 		if (isBetweenChangeFromOneViewToAnother(w)) {
+
 			return;
 		} else if ( isTransitionToANewWidget(w) ) {
 			root.add(w);
@@ -88,5 +97,28 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
     }-*/;	
 	
 	public void onTransitionEnd(String e){
+	}
+
+	void dock(IsWidget w) {
+		if(w instanceof Widget) {
+			dock((Widget)w);
+		}
+	}
+	
+	@Override
+	public void onResize() {
+		if(getWidget()!=null && getWidget() instanceof RequiresResize) {
+			((RequiresResize)getWidget()).onResize();
+		}
+	}
+	
+	void dock(Widget w) {
+		if(w!=null) {
+			w.getElement().getStyle().setPosition(Position.ABSOLUTE);
+			w.getElement().getStyle().setTop(0, Unit.PX);
+			w.getElement().getStyle().setBottom(0, Unit.PX);
+			w.getElement().getStyle().setLeft(0, Unit.PX);
+			w.getElement().getStyle().setRight(0, Unit.PX);
+		}
 	}
 }
