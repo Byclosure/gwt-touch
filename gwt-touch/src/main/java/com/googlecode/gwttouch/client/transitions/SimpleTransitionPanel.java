@@ -1,5 +1,8 @@
 package com.googlecode.gwttouch.client.transitions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.Timer;
@@ -10,14 +13,18 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.ProvidesResize;
 import com.google.gwt.user.client.ui.RequiresResize;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.Element;
 
 public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget, RequiresResize, ProvidesResize{
 	
 	private FlowPanel root = new FlowPanel();
 	
+	private IsWidget currentlyViewedPanel = null;
+	
+	private Map<Element, ExecutingAnimation> runningAnimations  = new HashMap<Element, ExecutingAnimation>();
+	
 	public SimpleTransitionPanel() {
 		initWidget(root);
-//		root.getElement().getStyle().setHeight(100, Unit.PCT);
 		//TODO: discuss this change w/ Carlos, and why I did it
 		dock(root);
 	}
@@ -32,71 +39,90 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
 	
 	@Override
 	public void setWidget(IsWidget w) {
-
 		dock(w);
 		
-		if (isBetweenChangeFromOneViewToAnother(w)) {
-
+		if (currentlyViewedPanel == w || isBetweenChangeFromOneViewToAnother(w)) {
 			return;
-		} else if ( isTransitionToANewWidget(w) ) {
+		}
+		
+		if ( isTransitionToANewWidget(w) ) {
 			root.add(w);
 			animateWidgets();
 		} else if ( w != null && root.getWidgetCount() == 0){
 			root.add(w);
 		}
+		currentlyViewedPanel = w;
 	}
 	
 	private void animateWidgets(){
 		root.getElement().getStyle().setHeight(100, Unit.PCT);
 		if ( root.getWidgetCount() > 2 ) {
-			root.remove(0);
+			root.remove(0);				
 		}
 		Widget newCard = root.getWidget(root.getWidgetCount() - 1);
-		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		Animation from = SlideAnimation.newMoveToOriginAnimation(newCard.getElement(), this, "left", false, false, false);
-		from.run();
-		
-		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		final Animation to = SlideAnimation.newMoveToDestinationAnimation(newCard.getElement(), this, "left", false, false, false);
-		Timer t = new Timer() {
-		      public void run() {
-		    	  to.run();
-		      }
-		};
-		t.schedule(5);
+		animateCard(newCard, "left", false, false,false);
 		
 		Widget oldCard = root.getWidget(Math.max(root.getWidgetCount() - 2, 0));
-		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		Animation oldCardFrom = SlideAnimation.newMoveToOriginAnimation(oldCard.getElement(), this, "left", false, false, true);
-		oldCardFrom.run();
-		
-		//Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out
-		final Animation oldCardTo = SlideAnimation.newMoveToDestinationAnimation(oldCard.getElement(), this, "left", false, false, true);
-		Timer oldCardTimer = new Timer() {
-		      public void run() {
-		    	  oldCardTo.run();
-		      }
-		};
-		oldCardTimer.schedule(5);
+		animateCard(oldCard, "left", false, false, true);		
 	}
 	
-	public final native void addTransitionEndHandler(final com.google.gwt.user.client.Element e, final SimpleTransitionPanel containerPanel) /*-{
-		$wnd['carlitosHandler'] = function(event) {
-	     	if ('left' === event.propertyName ) {
-	     	   e.removeEventListener('webkitTransitionEnd', this, false);
-	     	   containerPanel.@com.googlecode.gwttouch.client.transitions.SimpleTransitionPanel::onTransitionEnd(Ljava/lang/String;)('ignored lame parameter');
-	     	} 
-	 	};
-	    e.addEventListener('webkitTransitionEnd', $wnd['carlitosHandler'], false);
-    }-*/;
+	private void animateCard(Widget card, String direction, boolean cover, boolean reveal, boolean out) {
+		SlideAnimation.SlideAnimationConfiguration cardAnimationConfiguration = new SlideAnimation.SlideAnimationConfiguration();
+		cardAnimationConfiguration.element = card.getElement();
+		cardAnimationConfiguration.panel = this;
+		cardAnimationConfiguration.direction = direction;
+		cardAnimationConfiguration.cover = cover;
+		cardAnimationConfiguration.reveal = reveal;
+		cardAnimationConfiguration.out = out;
+		SlideAnimation.SlideAnimationStyleProperties cardAnimationStyleConfig = 
+			SlideAnimation.SlideAnimationStyleProperties.computeSlideAnimationStyleProperties(cardAnimationConfiguration);
+		
+		Animation cardFrom = SlideAnimation.newMoveToOriginAnimation(cardAnimationConfiguration, cardAnimationStyleConfig);
+		cardFrom.run();
+		
+		final Animation cardTo = SlideAnimation.newMoveToDestinationAnimation(cardAnimationConfiguration, cardAnimationStyleConfig);
+		Timer cardToTimer = new Timer() {
+		      public void run() {
+		    	  cardTo.run();
+		      }
+		};
+		cardToTimer.schedule(5);
+		
+		ExecutingAnimation newCardExecutingAnimation = new ExecutingAnimation();
+		newCardExecutingAnimation.from = cardFrom;
+		newCardExecutingAnimation.to = cardTo;
+		runningAnimations.put(card.getElement(), newCardExecutingAnimation);		
+	}	
 	
 	public final native void removeTransitionEndHandler(final com.google.gwt.user.client.Element e, final SimpleTransitionPanel containerPanel) /*-{
-        if ( typeof $wnd['carlitosHandler'] != 'undefined' ) {
-            e.removeEventListener('webkitTransitionEnd', $wnd['carlitosHandler'], this, false);
-        } 		
-    }-*/;	
+    if ( typeof $wnd['com.googlecode.gwttouch.transitions.internal.SimpleTransitionPanel.transitionHandler'] != 'undefined' ) {
+        e.removeEventListener('webkitTransitionEnd', $wnd['com.googlecode.gwttouch.transitions.internal.SimpleTransitionPanel.transitionHandler'], this, false);
+    } 		
+    }-*/;		
 	
-	public void onTransitionEnd(String e){
+	public final native void addTransitionEndHandler(final com.google.gwt.user.client.Element e, final SimpleTransitionPanel containerPanel) /*-{
+		$wnd['com.googlecode.gwttouch.transitions.internal.SimpleTransitionPanel.transitionHandler'] = function(event) {
+	    	containerPanel.@com.googlecode.gwttouch.client.transitions.SimpleTransitionPanel::onTransitionEnd(Lcom/google/gwt/user/client/Element;)(e);
+	 	};
+	    e.addEventListener('webkitTransitionEnd', $wnd['com.googlecode.gwttouch.transitions.internal.SimpleTransitionPanel.transitionHandler'], false);
+    }-*/;
+	
+	public void onTransitionEnd(Element e){
+		if ( runningAnimations.get(e) == null ) {
+			//System.out.println("CLEARING UP RETURNING... " + e.getId());
+			return;
+		}
+		//e.getStyle().setProperty("zIndex", "");
+		//e.getStyle().setProperty("opacity", "");
+		e.getStyle().setProperty("webkitTransitionDuration", "");
+		e.getStyle().setProperty("webkitTransitionProperty", "");
+		e.getStyle().setProperty("webkitTransitionTimingFunction", "");
+		//e.getStyle().setProperty("webkitTransform", "");
+		
+		//e.getParentElement().getStyle().setProperty("webkitPerspective", "");
+		//e.getParentElement().getStyle().setProperty("webkitTransformStyle", "");
+		
+		runningAnimations.remove(e);
 	}
 
 	void dock(IsWidget w) {
@@ -120,5 +146,14 @@ public class SimpleTransitionPanel extends Composite implements AcceptsOneWidget
 			w.getElement().getStyle().setLeft(0, Unit.PX);
 			w.getElement().getStyle().setRight(0, Unit.PX);
 		}
+	}
+
+	ExecutingAnimation getExecutingAnimationFor(Element e){
+		return runningAnimations.get(e);
+	}
+	
+	static class ExecutingAnimation {
+		Animation from;
+		Animation to;
 	}
 }

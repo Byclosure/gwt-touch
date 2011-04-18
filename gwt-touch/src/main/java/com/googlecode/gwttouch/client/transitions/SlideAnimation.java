@@ -2,102 +2,123 @@ package com.googlecode.gwttouch.client.transitions;
 
 import com.google.gwt.user.client.Element;
 
-public abstract class SlideAnimation implements Animation {
+abstract class SlideAnimation implements Animation {
 	
-	protected com.google.gwt.user.client.Element e;
-	protected SimpleTransitionPanel panel;
-	protected String direction;
-	protected boolean cover;
-	protected boolean reveal;
-	protected boolean out;
+	static class SlideAnimationConfiguration {
+		public Element element;
+		public SimpleTransitionPanel panel;
+		public String direction;
+		public boolean cover;
+		public boolean reveal;
+		public boolean out;
+	}
 	
-	protected int fromX;
-	protected int fromY;
-	protected int zIndex;
-	protected int toX;
-	protected int toY;
-	
-    private SlideAnimation(Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out) {
-    	this.e = e;
-    	this.panel = panel;
-    	this.direction = direction;
-    	this.cover = cover;
-    	this.reveal = reveal;
-    	this.out = out;
-    }		
-	
-	protected void calculateProperties(){
-		int currentZ = "auto".equals(e.getStyle().getZIndex()) || "".equals(e.getStyle().getZIndex()) ? 0 : Integer.parseInt(e.getStyle().getZIndex());
+	static class SlideAnimationStyleProperties {
+		int fromX;
+		int fromY;
+		int zIndex;
+		int toX;
+		int toY;
 		
-		zIndex = currentZ + 1;
-		toX = 0;
-		toY = 0;
-		fromX = 0;
-		fromY = 0;
-		
-		int elementWidth = e.getClientWidth();
-		int elementHeight = e.getClientHeight();
-		
-		if ( "left".equals(direction) || "right".equals(direction) ) {
-			if (out) {
-				toX = -elementWidth;
-			} else {
-				fromX = elementWidth;
+		static SlideAnimationStyleProperties computeSlideAnimationStyleProperties(SlideAnimation.SlideAnimationConfiguration animationConfiguration) {
+			int currentZ = "auto".equals(animationConfiguration.element.getStyle().getZIndex()) || 
+			                   "".equals(animationConfiguration.element.getStyle().getZIndex()) ? 0 : Integer.parseInt(animationConfiguration.element.getStyle().getZIndex());
+			
+			int zIndex = currentZ + 1;
+			int toX = 0;
+			int toY = 0;
+			int fromX = 0;
+			int fromY = 0;
+			
+			int elementWidth = animationConfiguration.element.getClientWidth();
+			int elementHeight = animationConfiguration.element.getClientHeight();
+			
+			if ( "left".equals(animationConfiguration.direction) || "right".equals(animationConfiguration.direction) ) {
+				if (animationConfiguration.out) {
+					toX = -elementWidth;
+				} else {
+					fromX = elementWidth;
+				}
+			} else if ( "up".equals(animationConfiguration.direction) || "down".equals(animationConfiguration.direction) ) {
+				if ( animationConfiguration.out ) {
+					toY = -elementHeight;
+				} else {
+					fromY = elementHeight;
+				}
 			}
-		} else if ( "up".equals(direction) || "down".equals(direction) ) {
-			if ( out ) {
-				toY = -elementHeight;
-			} else {
-				fromY = elementHeight;
+			
+			if ( "right".equals(animationConfiguration.direction) || "down".equals(animationConfiguration.direction) ) {
+				toY *= -1;
+				toX *= -1;
+				fromY *= -1;
+				fromX *= -1;
 			}
-		}
-		
-		if ( "right".equals(direction) || "down".equals(direction) ) {
-			toY *= -1;
-			toX *= -1;
-			fromY *= -1;
-			fromX *= -1;
-		}
-		
-		if ( cover && out ) {
-			toX = 0;
-			toY = 0;
-			zIndex = currentZ;
-		} else if ( reveal && !out ) {
-			fromX = 0;
-			fromY = 0;
-			zIndex = currentZ;
+			
+			if ( animationConfiguration.cover && animationConfiguration.out ) {
+				toX = 0;
+				toY = 0;
+				zIndex = currentZ;
+			} else if ( animationConfiguration.reveal && !animationConfiguration.out ) {
+				fromX = 0;
+				fromY = 0;
+				zIndex = currentZ;
+			}
+			
+			SlideAnimationStyleProperties result = new SlideAnimationStyleProperties();
+			result.fromX = fromX;
+			result.fromY = fromY;
+			result.zIndex = zIndex;
+			result.toX = toX;
+			result.toY = toY;		
+	        return result;		
 		}
 	}
 	
-	public static Animation newMoveToOriginAnimation(Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out){
-		return new SlideAnimation(e, panel, direction, cover, reveal, out){
+	SlideAnimationConfiguration configuration;
+		
+    SlideAnimation(SlideAnimationConfiguration configuration) {
+    	this.configuration = configuration;
+    }
+	
+	public static Animation newMoveToOriginAnimation(final SlideAnimation.SlideAnimationConfiguration config, final SlideAnimation.SlideAnimationStyleProperties styles){
+		return new SlideAnimation(config){
 			@Override
 			public void run() {
-				calculateProperties();
-				panel.removeTransitionEndHandler(e, panel);
-				e.getStyle().setProperty("webkitTransform", "translate3d(" + fromX + "px, " + fromY +"px, 0px)");
-				e.getStyle().setZIndex(zIndex);
-				e.getStyle().setOpacity(0.99d);
-				e.getStyle().setProperty("webkitTransitionDuration", "0ms");
-				e.getStyle().setProperty("webkitTransitionProperty", "all");
-				e.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out");
+				//System.out.println("STARTING FROM for " + config.element.getId());
+				SimpleTransitionPanel.ExecutingAnimation executingAnimation = config.panel.getExecutingAnimationFor(config.element);				
+				if ( executingAnimation != null ) {
+					config.panel.onTransitionEnd(config.element);
+				}
+				
+				config.panel.removeTransitionEndHandler(config.element, config.panel);
+				config.element.getStyle().setProperty("webkitTransform", "translate3d(" + styles.fromX + "px, " + styles.fromY +"px, 0px)");
+				config.element.getStyle().setZIndex(styles.zIndex);
+				config.element.getStyle().setOpacity(0.99d);
+				config.element.getStyle().setProperty("webkitTransitionDuration", "0ms");
+				config.element.getStyle().setProperty("webkitTransitionProperty", "all");
+				config.element.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out");
 			}			
 		};
 	}
 	
-	public static Animation newMoveToDestinationAnimation(Element e, SimpleTransitionPanel panel, String direction, boolean cover, boolean reveal, boolean out){
-		return new SlideAnimation(e, panel, direction, cover, reveal, out){
+	
+	public static Animation newMoveToDestinationAnimation(final SlideAnimation.SlideAnimationConfiguration config, final SlideAnimation.SlideAnimationStyleProperties styles){
+		return new SlideAnimation(config){
 			@Override
 			public void run() {
-				calculateProperties();
-				panel.addTransitionEndHandler(e, panel);
-				e.getStyle().setProperty("webkitTransitionDuration", "250ms");
-				e.getStyle().setProperty("webkitTransitionProperty", "all");
-				e.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out");
-				e.getStyle().setProperty("webkitTransform", "translate3d(" + toX + "px," + toY + "px, 0px)");
-				e.getStyle().setZIndex(zIndex);
-				e.getStyle().setOpacity(1d);			
+				//System.out.println("STARTING TO for " + config.element.getId());
+				//config.element.getParentElement().getStyle().setProperty("webkitPerspective", "1200");
+				//config.element.getParentElement().getStyle().setProperty("webkitTransformStyle", "preserve-3d");
+				
+				config.element.getStyle().setProperty("webkitTransitionDuration", "250ms");
+				config.element.getStyle().setProperty("webkitTransitionProperty", "all");
+				config.element.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out");
+				
+				config.panel.addTransitionEndHandler(config.element, config.panel);
+				
+				config.element.getStyle().setProperty("webkitTransform", "translate3d(" + styles.toX + "px," + styles.toY + "px, 0px)");
+				config.element.getStyle().setZIndex(styles.zIndex);
+				config.element.getStyle().setOpacity(1d);			
 			}	
 		};
 	}
