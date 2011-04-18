@@ -93,10 +93,10 @@ abstract class SlideAnimation implements Animation {
 				config.panel.removeTransitionEndHandler(config.element, config.panel);
 				config.element.getStyle().setProperty("webkitTransform", "translate3d(" + styles.fromX + "px, " + styles.fromY +"px, 0px)");
 				config.element.getStyle().setZIndex(styles.zIndex);
-				config.element.getStyle().setOpacity(0.99d);
+//				config.element.getStyle().setOpacity(0.99d);
 				config.element.getStyle().setProperty("webkitTransitionDuration", "0ms");
 				config.element.getStyle().setProperty("webkitTransitionProperty", "all");
-				config.element.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out");
+				config.element.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out"); //from ease-in-out to linear
 			}			
 		};
 	}
@@ -110,15 +110,15 @@ abstract class SlideAnimation implements Animation {
 				//config.element.getParentElement().getStyle().setProperty("webkitPerspective", "1200");
 				//config.element.getParentElement().getStyle().setProperty("webkitTransformStyle", "preserve-3d");
 				
-				config.element.getStyle().setProperty("webkitTransitionDuration", "250ms");
+				config.element.getStyle().setProperty("webkitTransitionDuration", "250ms"); //from 250 to .4s
 				config.element.getStyle().setProperty("webkitTransitionProperty", "all");
-				config.element.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out");
+				config.element.getStyle().setProperty("webkitTransitionTimingFunction", "ease-in-out"); //from ease-in-out to linear
 				
 				config.panel.addTransitionEndHandler(config.element, config.panel);
 				
 				config.element.getStyle().setProperty("webkitTransform", "translate3d(" + styles.toX + "px," + styles.toY + "px, 0px)");
 				config.element.getStyle().setZIndex(styles.zIndex);
-				config.element.getStyle().setOpacity(1d);			
+//				config.element.getStyle().setOpacity(1d);			
 			}	
 		};
 	}

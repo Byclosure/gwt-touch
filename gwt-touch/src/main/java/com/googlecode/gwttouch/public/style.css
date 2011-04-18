@@ -1,6 +1,7 @@
 * {
     margin: 0 !IMPORTANT;
     padding: 0 !IMPORTANT;
+    -webkit-backface-visibility: hidden;
 }
 a {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
