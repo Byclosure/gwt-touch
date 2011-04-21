@@ -11,6 +11,7 @@ import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
+import com.google.gwt.touch.client.ScrollPanel;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.ui.HTML;
@@ -56,7 +57,7 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 
 	protected final HTML listPanel;
 	protected final Cell<T> cell;
-	protected final TouchPanel root;
+	protected final ScrollPanel root;// TouchPanel root;
 	protected List<? extends T> values;
 	protected SelectionModel<? super T> selectionModel;
 
@@ -69,7 +70,7 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 		//ensure style sheet loaded
 		ListViewResources.INSTANCE.css().ensureInjected();
 		
-		this.root = new TouchPanel();
+		this.root = new ScrollPanel();//TouchPanel();
 		this.cell = cell;
 		
 		//initialize the widget
@@ -152,13 +153,17 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 	
 	@Override
 	public void onBrowserEvent(Event e) {
+		
 		switch(e.getTypeInt()) {
+//		case Event.ONTOUCHEND:
 		case Event.ONCLICK :
-
-			if(e.getRelatedEventTarget()==null)
-				return;
+//			Window.alert("clicked!");
+//			if(e.getRelatedEventTarget()==null)
+//				return;
 			
-			Element target = com.google.gwt.user.client.Element.as(e.getRelatedEventTarget().cast());
+//			Window.alert("clicked!");
+			
+			Element target = com.google.gwt.user.client.Element.as(e.getEventTarget());
 			if(target!=null && DOM.isOrHasChild(listPanel.getElement(), (com.google.gwt.user.client.Element) target)){
 				Element itemElement = target;
 				while(itemElement!=null) {
@@ -174,6 +179,7 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 			}
 			
 		break;
+//		default: Window.alert(e.getType());
 		}
 		super.onBrowserEvent(e);
 	}

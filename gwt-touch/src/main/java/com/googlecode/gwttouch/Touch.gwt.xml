@@ -3,6 +3,8 @@
     <inherits name="com.google.gwt.user.UserAgent"/>
     <inherits name="com.google.gwt.i18n.I18N" />
 
+	<inherits name="com.google.gwt.touch.Touch" />
+
 	<source path="client"/>
     <public path="path" />
     <stylesheet src="style.css"/>
