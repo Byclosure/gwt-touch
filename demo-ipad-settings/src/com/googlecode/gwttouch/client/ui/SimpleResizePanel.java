@@ -4,6 +4,12 @@ import com.googlecode.gwttouch.client.transitions.SimpleTransitionPanel;
 
 
 public class SimpleResizePanel extends SimpleTransitionPanel {
+	
+	public SimpleResizePanel() {
+		super();
+		getElement().getStyle().setProperty("webkitBackfaceVisibility", "hidden");
+	}
+	
 //public class SimpleResizePanel extends SimplePanel
 //	implements RequiresResize, ProvidesResize {
 //

@@ -4,6 +4,7 @@
 	xmlns:u="urn:import:com.googlecode.gwttouch.client.ui" 
 	xmlns:gmw="urn:import:com.googlecode.gwttouch.client.formview" 
 	xmlns:f="urn:import:com.googlecode.gwttouch.client.menuview" 
+	xmlns:tr="urn:import:com.googlecode.gwttouch.client.transitions" 
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:with field='res' type='com.googlecode.gwttouch.client.resources.Resources'/>
 	<ui:style>
@@ -14,8 +15,8 @@
 		.bottomLabel { position:absolute;bottom:0px;left:10px;}
 		.middleLabel { position:absolute;bottom:49%;left:10px;}
 		
-		@external gwtTouch-Header;
-		.gwtTouch-Header { border-right:1px solid #000; }
+		@external gwtTouch-Header-RightBorder;
+		.gwtTouch-Header-RightBorder { border-right:1px solid #000; }
 		
 		.innerInner {
 			border:1px solid #000;
@@ -28,7 +29,7 @@
 		<g:west size="300">
 			<g:DockLayoutPanel unit="PX">
 				<g:north size="45">
-					<g:HTMLPanel styleName="gwtTouch-Header">
+					<g:HTMLPanel styleName="gwtTouch-Header gwtTouch-Header-RightBorder">
 						 Settings
 					</g:HTMLPanel>
 				</g:north>
@@ -38,53 +39,8 @@
 			</g:DockLayoutPanel>
 		</g:west>
 		<g:center>
-
-					<u:SimpleResizePanel ui:field="centerPanel"></u:SimpleResizePanel>
-				
-<!-- 					<t:TouchPanel styleName="{style.center}"> -->
-<!-- 						<g:HTMLPanel styleName="{style.centerInner}"> -->
-							
-							
-							
-							
-							
-							
-							
-
-							
-							
-<!-- 							<f:MenuView> -->
-<!-- 								<f:OneLineMenuItem subText="My iPad">About</f:OneLineMenuItem> -->
-<!-- 								<f:OneLineMenuItem>Usage</f:OneLineMenuItem> -->
-<!-- 							</f:MenuView> -->
-							
-							
-		
-<!-- 							<f:MenuView> -->
-<!-- 								<f:OneLineMenuItem accessory="DISCLOSURE_INDICATOR">Sounds</f:OneLineMenuItem> -->
-<!-- 							</f:MenuView> -->
-<!-- 							<f:MenuView> -->
-<!-- 								<f:OneLineMenuItem accessory="DETAIL_DISCLOSURE">Network</f:OneLineMenuItem> -->
-<!-- 								<f:OneLineMenuItem subText="Mouse or Keyboard" accessory="DETAIL_DISCLOSURE">Bluetooth</f:OneLineMenuItem> -->
-<!-- 							</f:MenuView> -->
-<!-- 							<f:MenuView> -->
-<!-- 								<f:OneLineMenuItem image="{res.wallpaperBeach}">Beach Wallpaper</f:OneLineMenuItem> -->
-<!-- 								<f:OneLineMenuItem image="{res.wallpaperFlowers}">Pretty Flowers</f:OneLineMenuItem> -->
-<!-- 							</f:MenuView> -->
-<!-- 							<f:MenuView> -->
-<!-- 								<f:CheckMenuItem>Auto-Lock</f:CheckMenuItem> -->
-<!-- 								<f:CheckMenuItem>Passcode Lock</f:CheckMenuItem> -->
-<!-- 								<f:SwitchMenuItem>iPad Cover Lock / Unlock</f:SwitchMenuItem> -->
-<!-- 							</f:MenuView> -->
-<!-- 							<f:MenuView> -->
-<!-- 								<f:RadioMenuItem name="color">Red</f:RadioMenuItem> -->
-<!-- 								<f:RadioMenuItem name="color">Green</f:RadioMenuItem> -->
-<!-- 								<f:RadioMenuItem name="color">Blue</f:RadioMenuItem> -->
-<!-- 							</f:MenuView>					 -->
-
-<!-- 						</g:HTMLPanel> -->
-<!-- 					</t:TouchPanel> -->
-
+			<u:SimpleResizePanel ui:field="centerPanel"></u:SimpleResizePanel>
+<!-- <tr:SimpleTransitionPanel ui:field="centerPanel"></tr:SimpleTransitionPanel> -->
 		</g:center>
 	</g:DockLayoutPanel>
 </ui:UiBinder> 
