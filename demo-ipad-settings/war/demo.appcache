@@ -1,12 +1,12 @@
 CACHE MANIFEST
-# Fri Jun 17 18:51:25 +0100 2011
+# Fri Jun 17 19:42:43 +0100 2011
 
 CACHE:
 demo/style.css
 demo/demo.nocache.js
-demo/972AA9BC0E865D35E86D7DAF8FA58149.cache.html
-demo/hosted.html
 index.html
+demo/43E0480CF0D4427FFA4AE869B1A12EC0.cache.html
+demo/hosted.html
 apple-touch-icon-precomposed.png
 apple-touch-icon.png
 demo/checkbox.png
