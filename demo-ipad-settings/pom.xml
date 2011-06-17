@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.googlecode</groupId>
+  <artifactId>gwt-touch-ipad-settings</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>gwt-touch-ipad-settings</name>
+    <url>http://code.google.com/p/gwt-touch/</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <description>a widget-toolkit for building tablet and touch-based web applications</description>
+    <developers>
+        <developer>
+            <name>Brad Rydzewski</name>
+            <url>http://www.google.com/profiles/Brad.Rydzewski</url>
+        </developer>
+        <developer>
+            <name>Carlos Morales</name>
+            <url>http://profiles.google.com/carlos.morales.duran/about</url>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <name>gwt-maven-repo</name>
+            <id>gwt-maven-repo</id>
+            <url>http://gwt-maven-repo.googlecode.com/svn/trunk/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+			<groupId>com.googlecode</groupId>
+			<artifactId>gwt-touch</artifactId>
+			<version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+		
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <optimize>true</optimize>
+                </configuration>
+            </plugin>
+
+      <plugin>
+		<groupId>org.codehaus.mojo</groupId>
+		<artifactId>gwt-maven-plugin</artifactId>
+		<version>2.2.0</version>
+		<configuration>
+			<!-- 
+			<appEngineGroupId>appengine-java-sdk</appEngineGroupId>
+			<appEngineGroupId>com.google.appengine</appEngineGroupId>	
+			<appEngineHome>${gae.home}</appEngineHome>
+			<port>${gae.port}</port>
+			<server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
+			<appEngineVersion>${gae.version}</appEngineVersion>
+			 -->
+			 
+			<logLevel>INFO</logLevel>
+			<style>DETAILED</style>
+			<extraJvmArgs>-Xmx512m</extraJvmArgs>	
+			<runTarget>index.html</runTarget>	
+			<gwtVersion>${gwt.version}</gwtVersion>
+						
+			<copyWebapp>false</copyWebapp>
+		
+			<runClasspathExcludes>
+				<runClasspathExclude>asm-3.3.jar</runClasspathExclude>
+			</runClasspathExcludes>
+
+		</configuration>
+		<executions>
+			<execution>
+				<phase>generate-sources</phase>
+				<id>service</id>
+				<goals>
+					<goal>generateAsync</goal>
+				</goals>
+			</execution>
+			<execution>
+				<phase>compile</phase>
+				<id>compile</id>
+				<goals>
+					<goal>compile</goal>
+				</goals>
+			</execution>
+		</executions>
+      </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1-beta-1</version>
+                <configuration>
+                    <warSourceDirectory>war</warSourceDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+            	<groupId>org.codehaus.mojo</groupId>
+            	<artifactId>tomcat-maven-plugin</artifactId>
+            	<version>1.1</version>
+            	<configuration>
+            		<warSourceDirectory>${webappDirectory}</warSourceDirectory>
+          			<configurationDir>${project.build.directory}/tomcat</configurationDir>
+            	</configuration>
+            </plugin>
+        </plugins>
+        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <finalName>gwt-touch-demo</finalName>
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        
+    </build>
+
+    <properties>
+        <gwt.version>2.2.0</gwt.version>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven-compiler-plugin.version>2.0.2</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.6</maven-surefire-plugin.version>
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        
+    </properties>
+</project>

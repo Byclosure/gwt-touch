@@ -5,6 +5,8 @@
   <inherits name="com.google.gwt.activity.Activity"/>
   <inherits name="com.google.gwt.place.Place"/>
 
+  <inherits name="us.synx.wc.IPhoneScroller" />
+
   <inherits name="com.googlecode.gwttouch.Touch"/>
   <entry-point class="com.googlecode.gwttouch.client.SettingsEntryPoint" />
   <source path="client" /> 

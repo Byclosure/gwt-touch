@@ -7,27 +7,26 @@ import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.Cell.Context;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.Style.Overflow;
 import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.touch.client.ScrollPanel;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.ResizeComposite;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.CellPreviewEvent;
 import com.google.gwt.view.client.HasData;
 import com.google.gwt.view.client.Range;
 import com.google.gwt.view.client.RangeChangeEvent;
-import com.google.gwt.view.client.RangeChangeEvent.Handler;
 import com.google.gwt.view.client.RowCountChangeEvent;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SelectionModel;
+import com.google.gwt.view.client.RangeChangeEvent.Handler;
 import com.googlecode.gwttouch.client.listview.ListViewResources;
 
-public class ListView<T> extends ResizeComposite implements HasData<T> {
+public class ListView2<T> extends Composite implements HasData<T> {
 
 	
 	
@@ -58,33 +57,30 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 
 	protected final HTML listPanel;
 	protected final Cell<T> cell;
-	protected final ScrollPanel root;// TouchPanel root;
 	protected List<? extends T> values;
 	protected SelectionModel<? super T> selectionModel;
 
-	public ListView() {
+	public ListView2() {
 		this(new ListViewCell<T>());
 	}
 	
-	public ListView(Cell<T> cell) {
+	public ListView2(Cell<T> cell) {
 		
 		//ensure style sheet loaded
 		ListViewResources.INSTANCE.css().ensureInjected();
 		
-		this.root = new ScrollPanel();//TouchPanel();
 		this.cell = cell;
 		
-		//initialize the widget
-		this.initWidget(root);
-
 		// create the panel that will hold the list items
 		this.listPanel = new HTML();//Document.get().createDivElement();
 		this.listPanel.setStyleName("touchListView");
-		this.listPanel.getElement().getStyle().setPosition(Position.ABSOLUTE);
-		this.listPanel.getElement().getStyle().setTop(0, Unit.PX);
-		this.listPanel.getElement().getStyle().setLeft(0, Unit.PX);
-		this.listPanel.getElement().getStyle().setRight(0, Unit.PX);
-		this.root.add(listPanel);
+//		this.listPanel.getElement().getStyle().setPosition(Position.ABSOLUTE);
+//		this.listPanel.getElement().getStyle().setTop(0, Unit.PX);
+//		this.listPanel.getElement().getStyle().setLeft(0, Unit.PX);
+//		this.listPanel.getElement().getStyle().setRight(0, Unit.PX);
+		
+		//initialize the widget
+		this.initWidget(this.listPanel);
 		
 		this.sinkEvents(Event.ONCLICK);
 	}
@@ -185,28 +181,6 @@ public class ListView<T> extends ResizeComposite implements HasData<T> {
 		super.onBrowserEvent(e);
 	}
 	
-//	protected Element getEventTargetCell(Event event) {
-//	    Element td = DOM.eventGetTarget(event);
-//	    for (; td != null; td = DOM.getParent(td)) {
-//	      // If it's a TD, it might be the one we're looking for.
-//	      if (DOM.getElementProperty(td, "tagName").equalsIgnoreCase("td")) {
-//	        // Make sure it's directly a part of this table before returning
-//	        // it.
-//	        Element tr = DOM.getParent(td);
-//	        Element body = DOM.getParent(tr);
-//	        if (body == bodyElem) {
-//	          return td;
-//	        }
-//	      }
-//	      // If we run into this table's body, we're out of options.
-//	      if (td == bodyElem) {
-//	        return null;
-//	      }
-//	    }
-//	    return null;
-//	  }
-	
-	 	
 	
 	// Unsupported method required by HasData interface
 	@Override

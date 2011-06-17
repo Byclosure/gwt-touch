@@ -34,7 +34,9 @@
 					</g:HTMLPanel>
 				</g:north>
 				<g:center>
-					<t:ListView ui:field="list" styleName="{style.west}"></t:ListView>
+				    <g:FlowPanel ui:field="listContainer">
+						<t:ListView2 ui:field="list"></t:ListView2>
+					</g:FlowPanel>
 				</g:center>
 			</g:DockLayoutPanel>
 		</g:west>
