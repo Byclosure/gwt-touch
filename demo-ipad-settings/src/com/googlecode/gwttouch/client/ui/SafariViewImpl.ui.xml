@@ -1,0 +1,3264 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
+	xmlns:t="urn:import:com.googlecode.gwttouch.client"
+	xmlns:m="urn:import:com.googlecode.gwttouch.client.menuview" 
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.center { 
+			background:rgb(232,234,235);
+		}
+		.centerInner { 
+			background:rgb(232,234,235);
+			padding:20px 20px !IMPORTANT;
+			width: 1500px;
+		}
+	</ui:style>
+	<g:DockLayoutPanel unit="PX">
+		<g:north size="45">
+			<g:HTMLPanel styleName="gwtTouch-Header">
+				Safari
+			</g:HTMLPanel>
+		</g:north>
+		<g:center>
+			<g:FlowPanel ui:field="listContainer" styleName="{style.center}">
+				<g:HTMLPanel ui:field="list" styleName="{style.centerInner}">
+	<table border="1">
+	<tr>
+		<th>Channel</th>
+		<th>0:00 PM</th><th>0:30 PM</th><th>1:00 PM</th><th>1:30 PM</th><th>2:00 PM</th><th>2:30 PM</th>
+		<th>3:00 PM</th><th>3:30 PM</th><th>4:00 PM</th><th>4:30 PM</th><th>5:00 PM</th><th>5:30 PM</th>
+		<th>6:00 PM</th><th>6:30 PM</th><th>7:00 PM</th><th>7:30 PM</th><th>8:00 PM</th><th>8:30 PM</th>
+		<th>9:00 PM</th><th>9:30 PM</th><th>10:00 PM</th><th>10:30 PM</th><th>11:00 PM</th><th>11:30 PM</th>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>ABC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">All My Children<br/>NEW</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="2">General Hospital<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>CBS</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+		<td colspan="1">Local Programming</td>
+		<td colspan="2">The Young and the Restless<br/>Victor Handles Diane's Manipulation<br/>NEW</td>
+		<td colspan="1">The Bold and The Beautiful<br/>NEW</td>
+		<td colspan="2">The Talk<br/>NEW</td>
+		<td colspan="2">Let's Make a Deal<br/>NEW</td>
+		<td colspan="4">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>NBC</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">Days of Our Lifes<br/>NEW</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="4">2011 U.S. Open Golf Championship<br/>Second Round<br/>NEW</td>
+		<td colspan="2">Local Programming<br/>NEW</td>
+	</tr>
+	<tr>
+		<td>FOX</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+		<td colspan="4">Local Programming</td>
+		<td colspan="2">Local Programming</td>
+		<td colspan="2">One Life to Live<br/>NEW</td>
+		<td colspan="6">Local Programming<br/>NEW</td>
+	</tr>
+
+	</table>
+					
+				</g:HTMLPanel>
+			</g:FlowPanel>
+		</g:center>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 

@@ -122,19 +122,13 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 		// config.setBounce(true);
 		config.setBounceLock(false);
 		config.setSnap(false);
-		config.setMomentum(false);
+		config.setMomentum(true);
 		config.setHScrollbar(false);
 		config.setVScrollbar(false);
 		config.setHScroll(false);
 		config.setVScroll(true);
 		iScroll = new IPhoneScroller(list, config);
 
-//		WindowEvents.addOrientationListener(new OrientationChangeHandler() {
-//			public void onOrientationChange(int orientation) {
-//				iScroll.refresh();
-//			}
-//		});
-		
 		selectionModel = new SingleSelectionModel<SettingsCategory>();
 		selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
 			public void onSelectionChange(SelectionChangeEvent event) {

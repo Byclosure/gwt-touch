@@ -5,6 +5,7 @@ import com.google.gwt.place.shared.PlaceController;
 import com.googlecode.gwttouch.client.ui.GeneralView;
 import com.googlecode.gwttouch.client.ui.NotificationsView;
 import com.googlecode.gwttouch.client.ui.PictureFrameView;
+import com.googlecode.gwttouch.client.ui.SafariView;
 import com.googlecode.gwttouch.client.ui.WifiView;
 
 public interface ClientFactory {
@@ -16,4 +17,5 @@ public interface ClientFactory {
 	WifiView getWifiView();
 	GeneralView getGeneralView();
 	PictureFrameView getPictureFrameView();
+	SafariView getSafariView();
 }

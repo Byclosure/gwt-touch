@@ -13,10 +13,12 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.googlecode.gwttouch.client.activity.GeneralActivity;
 import com.googlecode.gwttouch.client.activity.NotificationActivity;
 import com.googlecode.gwttouch.client.activity.PictureFrameActivity;
+import com.googlecode.gwttouch.client.activity.SafariActivity;
 import com.googlecode.gwttouch.client.activity.WifiActivity;
 import com.googlecode.gwttouch.client.place.GeneralPlace;
 import com.googlecode.gwttouch.client.place.NotificationsPlace;
 import com.googlecode.gwttouch.client.place.PictureFramePlace;
+import com.googlecode.gwttouch.client.place.SafariPlace;
 import com.googlecode.gwttouch.client.place.WifiPlace;
 import com.googlecode.gwttouch.client.resources.Resources;
 
@@ -94,6 +96,8 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 			goTo(new PictureFramePlace());
 		}  else if("General".equals(category.getName())) {
 			goTo(new GeneralPlace());
+		}  else if("Safari".equals(category.getName())) {
+			goTo(new SafariPlace());
 		}
 	}
 
@@ -111,6 +115,9 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 		} else if(place instanceof PictureFramePlace) {
 			activity = new PictureFrameActivity(clientFactory);
 			view.setSelectedCategory(categoryList.get(3));
+		} else if(place instanceof SafariPlace) {
+			activity = new SafariActivity(clientFactory);
+			view.setSelectedCategory(categoryList.get(6));
 		}  else {
 			activity = new GeneralActivity(clientFactory);
 			view.setSelectedCategory(categoryList.get(4));
