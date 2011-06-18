@@ -68,6 +68,74 @@ public interface Resources extends ClientBundle {
 	@Source("settings-appstore.png")
 	ImageResource settingsAppstore();
 	
+	@Source("1.png")
+	ImageResource channel1();
 	
+	@Source("2.png")
+	ImageResource channel2();
+	
+	@Source("3.png")
+	ImageResource channel3();
+	
+	@Source("4.png")
+	ImageResource channel4();
+	
+	@Source("5.png")
+	ImageResource channel5();
+	@Source("6.png")
+	ImageResource channel6();
+	@Source("7.png")
+	ImageResource channel7();
+	@Source("8.png")
+	ImageResource channel8();
+	@Source("9.png")
+	ImageResource channel9();
+	@Source("10.png")
+	ImageResource channel10();
+	@Source("11.png")
+	ImageResource channel11();
+	@Source("12.png")
+	ImageResource channel12();
+	@Source("13.png")
+	ImageResource channel13();
+	@Source("14.png")
+	ImageResource channel14();
+	@Source("15.png")
+	ImageResource channel15();
+	@Source("16.png")
+	ImageResource channel16();
+	@Source("17.png")
+	ImageResource channel17();
+	@Source("18.png")
+	ImageResource channel18();
+	@Source("19.png")
+	ImageResource channel19();
+	@Source("20.png")
+	ImageResource channel20();
+	@Source("21.png")
+	ImageResource channel21();
+	@Source("22.png")
+	ImageResource channel22();
+	@Source("23.png")
+	ImageResource channel23();
+	@Source("24.png")
+	ImageResource channel24();
+	@Source("25.png")
+	ImageResource channel25();
+	@Source("26.png")
+	ImageResource channel26();
+	@Source("27.png")
+	ImageResource channel27();
+	@Source("28.png")
+	ImageResource channel28();
+	@Source("29.png")
+	ImageResource channel29();
+	@Source("30.png")
+	ImageResource channel30();
+	@Source("31.png")
+	ImageResource channel31();
+	@Source("32.png")
+	ImageResource channel32();
+
 
 }

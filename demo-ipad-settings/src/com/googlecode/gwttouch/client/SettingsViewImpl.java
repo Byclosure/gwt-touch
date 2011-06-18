@@ -19,7 +19,6 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
-import com.googlecode.gwttouch.client.WindowEvents.OrientationChangeHandler;
 import com.googlecode.gwttouch.client.ui.SimpleResizePanel;
 
 public class SettingsViewImpl extends ResizeComposite implements SettingsView {

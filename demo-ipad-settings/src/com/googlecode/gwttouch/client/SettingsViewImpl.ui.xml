@@ -26,6 +26,7 @@
 		}
 	</ui:style>
 	<g:DockLayoutPanel unit="PX">
+	    <!-- Remover! -->
 		<g:west size="300">
 			<g:DockLayoutPanel unit="PX">
 				<g:north size="45">
