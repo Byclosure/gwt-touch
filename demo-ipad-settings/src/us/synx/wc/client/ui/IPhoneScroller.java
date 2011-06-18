@@ -25,6 +25,7 @@ package us.synx.wc.client.ui;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 
 public class IPhoneScroller {
@@ -56,6 +57,8 @@ public class IPhoneScroller {
 	}
 
 	JavaScriptObject iScrollObj;
+
+	private PositionCallback positionCallback;
 
 	private static boolean libIncluded = false;
 
@@ -99,13 +102,34 @@ public class IPhoneScroller {
 		public final native void setVScrollbar(boolean b) /*-{
 			this.vScrollbar = b;
 		}-*/;
+		
+		public final native void setShouldBroadcastPosition(boolean b) /*-{
+			this.shouldBroadcastPosition = b;
+		}-*/;
+	}
+	
+	public interface PositionCallback {
+		void setPosition(int x, int y);
+	}
+
+	@SuppressWarnings("unused")
+	// called by native code to broadcast the new scroll position
+	private void callPositionCallback(int x, int y) {
+		if (this.positionCallback != null) {
+			this.positionCallback.setPosition(x, y);
+		}
 	}
 
 	public IPhoneScroller(Widget w) {
-		this(w, null);
+		this(w, null, null);
+	}
+	
+	public IPhoneScroller(Widget w, IPhoneScrollerConfig config) {
+		this(w, config, null);
 	}
 
-	public IPhoneScroller(Widget w, IPhoneScrollerConfig config) {
+	public IPhoneScroller(Widget w, IPhoneScrollerConfig config, PositionCallback positionCallback) {
+		this.positionCallback = positionCallback;
 
 		if (!libIncluded) {
 
@@ -118,6 +142,8 @@ public class IPhoneScroller {
 		}
 		// always setting this one
 		config.setDesktopCompatibility(true);
+		
+		config.setShouldBroadcastPosition(positionCallback != null);
 
 		iScrollObj = makeScrollableJSNI(w.getElement(), config);
 	}
@@ -136,12 +162,12 @@ public class IPhoneScroller {
 	}-*/;
 
 	protected native final void setPosition(JavaScriptObject o, int pos) /*-{
-		o.setposition(pos);
+		o.setPosition(pos);
 	}-*/;
 
 	protected native final JavaScriptObject makeScrollableJSNI(Element elem,
 			IPhoneScrollerConfig config) /*-{
-		return new $wnd.iScroll(elem, config);
+		return new $wnd.iScroll(elem, config, this);
 	}-*/;
 
 	protected native final void includeLibJSNI() /*-{
@@ -155,8 +181,9 @@ public class IPhoneScroller {
 		// 
 		// Version 3.7.1 - Last updated: 2010.10.08
 		(function() {
-			function j(n, l) {
+			function j(n, l, x) {
 				var o = this, m;
+				o.javaObj = x;
 				o.element = typeof n == "object" ? n : $doc.getElementById(n);
 				o.wrapper = o.element.parentNode;
 				o.element.style.webkitTransitionProperty = "-webkit-transform";
@@ -166,6 +193,7 @@ public class IPhoneScroller {
 				o.options = {
 					hScroll : true,
 					vScroll : true,
+					shouldBroadcastPosition : false,
 					bounce : d,
 					momentum : d,
 					checkDOMChanges : true,
@@ -327,6 +355,9 @@ public class IPhoneScroller {
 						}
 						if (m.scrollBarY) {
 							m.scrollBarY.setPosition(m.y)
+						}
+						if (m.options.shouldBroadcastPosition) {
+							m.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callPositionCallback(II)(m.x, m.y);
 						}
 					}
 				},

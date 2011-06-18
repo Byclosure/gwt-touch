@@ -9,17 +9,31 @@
 		}
 		.centerInner { 
 			background:rgb(232,234,235);
-			padding:20px 20px !IMPORTANT;
+			padding:0 20px !IMPORTANT;
 			width: 10000px;
 		}
 	</ui:style>
 	<g:DockLayoutPanel unit="PX">
 		<g:north size="45">
-			<g:HTMLPanel styleName="gwtTouch-Header">
+			<g:HTMLPanel ui:field="header" styleName="gwtTouch-Header">
 				Safari
 			</g:HTMLPanel>
 		</g:north>
 		<g:center>
+		<g:FlowPanel>
+			<g:FlowPanel ui:field="hoursListContainer" styleName="{style.center}">
+				<g:HTMLPanel ui:field="hoursList" styleName="{style.centerInner}">
+	<table border="1">
+	<tr align="left">
+		<th width="101" align="center">Channel</th>
+		<th width="200">0:00 PM</th><th width="200">0:30 PM</th><th width="200">1:00 PM</th><th width="200">1:30 PM</th><th width="200">2:00 PM</th><th width="200">2:30 PM</th>
+		<th width="200">3:00 PM</th><th width="200">3:30 PM</th><th width="200">4:00 PM</th><th width="200">4:30 PM</th><th width="200">5:00 PM</th><th width="200">5:30 PM</th>
+		<th width="200">6:00 PM</th><th width="200">6:30 PM</th><th width="200">7:00 PM</th><th width="200">7:30 PM</th><th width="200">8:00 PM</th><th width="200">8:30 PM</th>
+		<th width="200">9:00 PM</th><th width="200">9:30 PM</th><th width="200">10:00 PM</th><th width="200">10:30 PM</th><th width="200">11:00 PM</th><th width="200">11:30 PM</th>
+	</tr>
+	</table>
+	</g:HTMLPanel>
+	</g:FlowPanel>
 			<g:FlowPanel ui:field="listContainer" styleName="{style.center}">
 				<g:HTMLPanel ui:field="list" styleName="{style.centerInner}">
 	<table border="1">
@@ -554,6 +568,7 @@
 	</table>
 					
 				</g:HTMLPanel>
+			</g:FlowPanel>
 			</g:FlowPanel>
 		</g:center>
 	</g:DockLayoutPanel>

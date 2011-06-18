@@ -2,11 +2,13 @@ package com.googlecode.gwttouch.client.ui;
 
 import us.synx.wc.client.ui.IPhoneScroller;
 import us.synx.wc.client.ui.IPhoneScroller.IPhoneScrollerConfig;
+import us.synx.wc.client.ui.IPhoneScroller.PositionCallback;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.ResizeComposite;
@@ -22,20 +24,24 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 
 	@SuppressWarnings("unused")
 	private Presenter listener;
-	
+
+	@UiField
+	HTMLPanel header;
+	@UiField
+	FlowPanel hoursListContainer;
+	@UiField
+	HTMLPanel hoursList;
 	@UiField
 	FlowPanel listContainer;
 	@UiField
 	HTMLPanel list;
 	
+	private IPhoneScroller hoursIScroll;
 	private IPhoneScroller iScroll;
 	
-	private native void prepareIScroll(Element wrapper, int deltaHeight, int deltaWidth) /*-{
+	private native void prepareIScrollWidth(Element wrapper, int deltaWidth) /*-{
 		var javaObj = this;
 		var jsFixHeight = function() {
-			var height = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenHeight()();
-			height = height + deltaHeight; 
-			wrapper.style.height = height + 'px';
 			var width = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenWidth()();
 			width = width + deltaWidth; 
 			wrapper.style.width = width + 'px';
@@ -44,11 +50,21 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		$wnd.addEventListener(
 				'onorientationchange' in $wnd ? 'orientationchange' : 'resize',
 				jsFixHeight, false);
-		// The following is present in the iScroll horizontal example
-		// but this would mess up the regular ClickHandlers across the application.
-		// $doc.addEventListener('touchstart', function(e){ e.preventDefault(); }, false);
 	}-*/;
 	
+	private native void prepareIScrollHeight(Element wrapper, int deltaHeight) /*-{
+		var javaObj = this;
+		var jsFixHeight = function() {
+			var height = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenHeight()();
+			height = height + deltaHeight; 
+			wrapper.style.height = height + 'px';
+		};
+		jsFixHeight();
+		$wnd.addEventListener(
+				'onorientationchange' in $wnd ? 'orientationchange' : 'resize',
+				jsFixHeight, false);
+	}-*/;
+
 	public static int getAvailableScreenHeight() {
 		return getAvailableScreenHeight2();
 	}
@@ -108,11 +124,26 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	public SafariViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 
+		// Hours List
+		String hoursStyle = "position:relative;z-index:1;overflow:hidden;height:30px;";
+		hoursListContainer.getElement().setAttribute("style", hoursStyle);
+		prepareIScrollWidth(hoursListContainer.getElement(), -279);
+		IPhoneScrollerConfig hoursIScrollConfig = IPhoneScrollerConfig.getDefault();
+		// config.setBounce(true);
+		hoursIScrollConfig.setBounceLock(false);
+		hoursIScrollConfig.setSnap(false);
+		hoursIScrollConfig.setMomentum(true);
+		hoursIScrollConfig.setHScrollbar(false);
+		hoursIScrollConfig.setVScrollbar(false);
+		hoursIScrollConfig.setHScroll(true);
+		hoursIScrollConfig.setVScroll(false);
+		hoursIScroll = new IPhoneScroller(hoursList, hoursIScrollConfig);
+		
+		// Programming Grid
 		String style = "position:relative;z-index:1;overflow:hidden;height:100px;";
 		listContainer.getElement().setAttribute("style", style);
-		
-		prepareIScroll(listContainer.getElement(), -40, -279);
-		
+		prepareIScrollHeight(listContainer.getElement(), -40);
+		prepareIScrollWidth(listContainer.getElement(), -279);
 		IPhoneScrollerConfig config = IPhoneScrollerConfig.getDefault();
 		// config.setBounce(true);
 		config.setBounceLock(false);
@@ -122,7 +153,15 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		config.setVScrollbar(false);
 		config.setHScroll(true);
 		config.setVScroll(true);
-		iScroll = new IPhoneScroller(list, config);
+		
+		final Element headerElement = header.getElement();
+		PositionCallback pc = new PositionCallback() {
+			public void setPosition(int x, int y) {
+				headerElement.setInnerText(x + " " + y);
+				hoursIScroll.scrollTo(x, 0);
+			}
+		};
+		iScroll = new IPhoneScroller(list, config, pc);
 	}
 	
 	
@@ -134,6 +173,7 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 
 	@Override
 	public void refreshIScroll() {
+		hoursIScroll.refresh();
 		iScroll.refresh();
 	}
 }
