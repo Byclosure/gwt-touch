@@ -35,7 +35,7 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 		this.clientFactory = clientFactory;
 		this.eventBus = eventBus;
 		this.activityManager = new ActivityManager(this, eventBus);
-	
+/*	
 		categoryList =
 			new ArrayList<SettingsCategory>();
 		categoryList.add(new SettingsCategory("Wi-Fi",Resources.INSTANCE.settingsWifi()));
@@ -67,7 +67,7 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 //		categoryList.add(new SettingsCategory("FaceTime",Resources.INSTANCE.settingsFaceTime()));
 		categoryList.add(new SettingsCategory("Notes",Resources.INSTANCE.settingsNotes()));
 		categoryList.add(new SettingsCategory("Store",Resources.INSTANCE.settingsAppstore()));
-		
+*/		
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class SettingsActivity extends AbstractActivity implements ActivityMapper
 
 	@Override
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {
-		view = clientFactory.getSettingsView();
+		// view = clientFactory.getSettingsView();
 		view.setPresenter(this);
 		//TODO: figure out why I get an exception if I setList after I setWidgets
 		view.setCategoryList(categoryList);

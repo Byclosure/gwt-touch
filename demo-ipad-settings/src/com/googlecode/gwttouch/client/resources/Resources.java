@@ -136,6 +136,119 @@ public interface Resources extends ClientBundle {
 	ImageResource channel31();
 	@Source("32.png")
 	ImageResource channel32();
-
+	@Source("33.png")
+	ImageResource channel33();
+	@Source("34.png")
+	ImageResource channel34();
+	@Source("35.png")
+	ImageResource channel35();
+	@Source("36.png")
+	ImageResource channel36();
+	@Source("37.png")
+	ImageResource channel37();
+	@Source("38.png")
+	ImageResource channel38();
+	@Source("39.png")
+	ImageResource channel39();
+	@Source("40.png")
+	ImageResource channel40();
+	@Source("41.png")
+	ImageResource channel41();
+	@Source("42.png")
+	ImageResource channel42();
+	@Source("43.png")
+	ImageResource channel43();
+	@Source("44.png")
+	ImageResource channel44();
+	@Source("45.png")
+	ImageResource channel45();
+	@Source("46.png")
+	ImageResource channel46();
+	@Source("47.png")
+	ImageResource channel47();
+	@Source("48.png")
+	ImageResource channel48();
+	@Source("49.png")
+	ImageResource channel49();
+	@Source("50.png")
+	ImageResource channel50();
+	@Source("51.png")
+	ImageResource channel51();
+	@Source("52.png")
+	ImageResource channel52();
+	@Source("53.png")
+	ImageResource channel53();
+	@Source("54.png")
+	ImageResource channel54();
+	@Source("55.png")
+	ImageResource channel55();
+	@Source("56.png")
+	ImageResource channel56();
+	@Source("57.png")
+	ImageResource channel57();
+	@Source("58.png")
+	ImageResource channel58();
+	@Source("59.png")
+	ImageResource channel59();
+	@Source("60.png")
+	ImageResource channel60();
+	@Source("61.png")
+	ImageResource channel61();
+	@Source("62.png")
+	ImageResource channel62();
+	@Source("63.png")
+	ImageResource channel63();
+	@Source("64.png")
+	ImageResource channel64();
+	@Source("65.png")
+	ImageResource channel65();
+	@Source("66.png")
+	ImageResource channel66();
+	@Source("67.png")
+	ImageResource channel67();
+	@Source("68.png")
+	ImageResource channel68();
+	@Source("69.png")
+	ImageResource channel69();
+	@Source("70.png")
+	ImageResource channel70();
+	@Source("71.png")
+	ImageResource channel71();
+	@Source("72.png")
+	ImageResource channel72();
+	@Source("73.png")
+	ImageResource channel73();
+	@Source("74.png")
+	ImageResource channel74();
+	@Source("75.png")
+	ImageResource channel75();
+	@Source("76.png")
+	ImageResource channel76();
+	@Source("77.png")
+	ImageResource channel77();
+	@Source("78.png")
+	ImageResource channel78();
+	@Source("79.png")
+	ImageResource channel79();
+	@Source("80.png")
+	ImageResource channel80();
+	@Source("81.png")
+	ImageResource channel81();
+	@Source("82.png")
+	ImageResource channel82();
+	@Source("83.png")
+	ImageResource channel83();
+	@Source("84.png")
+	ImageResource channel84();
+	@Source("85.png")
+	ImageResource channel85();
+	@Source("86.png")
+	ImageResource channel86();
+	@Source("87.png")
+	ImageResource channel87();
+	@Source("88.png")
+	ImageResource channel88();
+	@Source("89.png")
+	ImageResource channel89();
 
 }

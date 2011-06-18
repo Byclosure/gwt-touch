@@ -7,6 +7,7 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.googlecode.gwttouch.client.place.GeneralPlace;
+import com.googlecode.gwttouch.client.ui.SafariViewImpl;
 import com.googlecode.gwttouch.client.ui.SimpleResizePanel;
 
 /**
@@ -31,6 +32,11 @@ public class SettingsEntryPoint implements EntryPoint {
 		
 		// Create the ClientFactory, EventBus, etc
 		ClientFactory clientFactory = new ClientFactoryImpl();
+		SafariViewImpl view = clientFactory.getSafariView();
+		resizableRoot.setWidget(view);
+		view.refreshIScroll();
+		
+		/*
 		EventBus eventBus = clientFactory.getEventBus();
 		PlaceController placeController = clientFactory.getPlaceController();
 
@@ -47,6 +53,7 @@ public class SettingsEntryPoint implements EntryPoint {
 		
 		// Goes to place represented on URL or default place
 		historyHandler.handleCurrentHistory();
+		*/
 	}
 
 }

@@ -9,7 +9,6 @@ import com.googlecode.gwttouch.client.ui.NotificationsView;
 import com.googlecode.gwttouch.client.ui.NotificationsViewImpl;
 import com.googlecode.gwttouch.client.ui.PictureFrameView;
 import com.googlecode.gwttouch.client.ui.PictureFrameViewImpl;
-import com.googlecode.gwttouch.client.ui.SafariView;
 import com.googlecode.gwttouch.client.ui.SafariViewImpl;
 import com.googlecode.gwttouch.client.ui.WifiView;
 import com.googlecode.gwttouch.client.ui.WifiViewImpl;
@@ -18,12 +17,12 @@ public class ClientFactoryImpl implements ClientFactory {
 	
 	private static final EventBus eventBus = new SimpleEventBus();
 	private static final PlaceController placeController = new PlaceController(eventBus);
-	private static final SettingsView settingsView = new SettingsViewImpl();
+	private static final SettingsViewImpl settingsView = new SettingsViewImpl();
 	private static final NotificationsView notificationsView = new NotificationsViewImpl();
 	private static final WifiView wifiView = new WifiViewImpl();
 	private static final GeneralView generalView = new GeneralViewImpl();
 	private static final PictureFrameView pictureFrameView = new PictureFrameViewImpl();
-	private static final SafariView safariView = new SafariViewImpl();
+	private static final SafariViewImpl safariView = new SafariViewImpl();
 	
 	public ClientFactoryImpl() {
 		
@@ -40,7 +39,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	}
 
 	@Override
-	public SettingsView getSettingsView() {
+	public SettingsViewImpl getSettingsView() {
 		return settingsView;
 	}
 
@@ -65,7 +64,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	}
 	
 	@Override
-	public SafariView getSafariView() {
+	public SafariViewImpl getSafariView() {
 		return safariView;
 	}
 }

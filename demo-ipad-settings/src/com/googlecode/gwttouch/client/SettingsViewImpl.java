@@ -21,7 +21,7 @@ import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.googlecode.gwttouch.client.ui.SimpleResizePanel;
 
-public class SettingsViewImpl extends ResizeComposite implements SettingsView {
+public class SettingsViewImpl extends ResizeComposite {
 
 	private static SettingsViewUiBinder uiBinder = GWT
 			.create(SettingsViewUiBinder.class);
@@ -45,17 +45,11 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 	}
 
 	//@UiField TouchPanel touchPanel;
-	@UiField SimpleResizePanel centerPanel;
-	@UiField FlowPanel listContainer;
-	@UiField(provided=true) ListView2<SettingsCategory> list =
-		new ListView2<SettingsCategory>(new SettingsCategoryCell());
-	
+	@UiField SimpleResizePanel centerPanel;	
 
 	SingleSelectionModel<SettingsCategory> selectionModel;
 	ListDataProvider<SettingsCategory> dataProvider =
 		new ListDataProvider<SettingsCategory>();
-	
-	private Presenter listener;
 	
 	private IPhoneScroller iScroll;
 	
@@ -112,7 +106,7 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 	public SettingsViewImpl() {
 
 		initWidget(uiBinder.createAndBindUi(this));
-
+/*
 		String style = "position:relative;z-index:1;overflow:hidden;height:100px;";
 		listContainer.getElement().setAttribute("style", style);
 		prepareIScroll(listContainer.getElement(), -40);
@@ -123,7 +117,7 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 		config.setSnap(false);
 		config.setMomentum(true);
 		config.setHScrollbar(false);
-		config.setVScrollbar(false);
+		config.setVScrollbar(true);
 		config.setHScroll(false);
 		config.setVScroll(true);
 		iScroll = new IPhoneScroller(list, config);
@@ -138,40 +132,7 @@ public class SettingsViewImpl extends ResizeComposite implements SettingsView {
 
 		list.setSelectionModel(selectionModel);
 		dataProvider.addDataDisplay(list);
-	}
-
-	private void fixHeight() {
-		int height = getAvailableScreenHeight() - 50;
-		prepareIScroll(listContainer.getElement(), height);
+		*/
 	}
 	
-	public void onCategroySelected(SettingsCategory category) {
-		listener.onCategorySelected(category);
-	}
-
-	@Override
-	public void setWidget(IsWidget w) {
-		centerPanel.setWidget(w);
-		iScroll.refresh();
-	}
-
-	@Override
-	public void setPresenter(Presenter listener) {
-		this.listener = listener;
-	}
-
-	@Override
-	public void setWindowTitle(String title) {
-		Window.setTitle(title);
-	}
-
-	@Override
-	public void setSelectedCategory(SettingsCategory category) {
-		selectionModel.setSelected(category, true);
-	}
-
-	@Override
-	public void setCategoryList(List<SettingsCategory> list) {
-		dataProvider.setList(list);
-	}
 }

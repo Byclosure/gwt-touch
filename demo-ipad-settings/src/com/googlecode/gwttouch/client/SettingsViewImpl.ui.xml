@@ -25,25 +25,5 @@
 			overflow:hidden;
 		}
 	</ui:style>
-	<g:DockLayoutPanel unit="PX">
-	    <!-- Remover! -->
-		<g:west size="300">
-			<g:DockLayoutPanel unit="PX">
-				<g:north size="45">
-					<g:HTMLPanel styleName="gwtTouch-Header gwtTouch-Header-RightBorder">
-						 Settings
-					</g:HTMLPanel>
-				</g:north>
-				<g:center>
-				    <g:FlowPanel ui:field="listContainer">
-						<t:ListView2 ui:field="list"></t:ListView2>
-					</g:FlowPanel>
-				</g:center>
-			</g:DockLayoutPanel>
-		</g:west>
-		<g:center>
-			<u:SimpleResizePanel ui:field="centerPanel"></u:SimpleResizePanel>
-<!-- <tr:SimpleTransitionPanel ui:field="centerPanel"></tr:SimpleTransitionPanel> -->
-		</g:center>
-	</g:DockLayoutPanel>
+	<u:SimpleResizePanel ui:field="centerPanel"></u:SimpleResizePanel>
 </ui:UiBinder> 

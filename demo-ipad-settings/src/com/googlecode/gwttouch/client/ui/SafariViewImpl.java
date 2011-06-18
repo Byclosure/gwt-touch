@@ -7,6 +7,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.ResizeComposite;
@@ -24,6 +25,8 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	private Presenter listener;
 	
 	@UiField
+	HTMLPanel header;
+	@UiField
 	FlowPanel listContainer;
 	@UiField
 	HTMLPanel list;
@@ -36,9 +39,11 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 			var height = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenHeight()();
 			height = height + deltaHeight; 
 			wrapper.style.height = height + 'px';
+			alert("height: " + wrapper.style.height);
 			var width = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenWidth()();
 			width = width + deltaWidth; 
 			wrapper.style.width = width + 'px';
+			alert("width: " + wrapper.style.width);
 		};
 		jsFixHeight();
 		$wnd.addEventListener(
@@ -108,10 +113,18 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	public SafariViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 
-		String style = "position:relative;z-index:1;overflow:hidden;height:100px;";
+		String style = "position:relative;z-index:1;overflow:hidden;height:100px";
 		listContainer.getElement().setAttribute("style", style);
+		String out = "deltaHeight = " + -header.getOffsetHeight() + "\n";
+		// prepareIScroll(listContainer.getElement(), - header.getOffsetHeight(), 0);
+		prepareIScroll(listContainer.getElement(), -45, 0);
 		
-		prepareIScroll(listContainer.getElement(), -40, -279);
+		out += "T: " + listContainer.getElement().getAbsoluteTop() + "\n";
+		out += "B: " + listContainer.getElement().getAbsoluteBottom() + "\n";
+		out += "L: " + listContainer.getElement().getAbsoluteLeft() + "\n";
+		out += "R: " + listContainer.getElement().getAbsoluteRight() + "\n";
+		
+		// Window.alert(out);
 		
 		IPhoneScrollerConfig config = IPhoneScrollerConfig.getDefault();
 		// config.setBounce(true);
@@ -122,6 +135,9 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		config.setVScrollbar(false);
 		config.setHScroll(true);
 		config.setVScroll(true);
+		
+		config.setDesktopCompatibility(true);
+		
 		iScroll = new IPhoneScroller(list, config);
 	}
 	
