@@ -110,6 +110,7 @@ public class IPhoneScroller {
 	
 	public interface PositionCallback {
 		void setPosition(int x, int y);
+		void setStyle(String propertyKey, String propertyValue);
 	}
 
 	@SuppressWarnings("unused")
@@ -118,6 +119,18 @@ public class IPhoneScroller {
 		if (this.positionCallback != null) {
 			this.positionCallback.setPosition(x, y);
 		}
+	}
+	
+	@SuppressWarnings("unused")
+	// called by native code to broadcast the new style
+	private void callStyleCallback(String propertyKey, String propertyValue) {
+		if (this.positionCallback != null) {
+			this.positionCallback.setStyle(propertyKey, propertyValue);
+		}
+	}
+	
+	private void callStyleCallback() {
+		Window.alert("here no args");
 	}
 
 	public IPhoneScroller(Widget w) {
@@ -187,9 +200,14 @@ public class IPhoneScroller {
 				o.element = typeof n == "object" ? n : $doc.getElementById(n);
 				o.wrapper = o.element.parentNode;
 				o.element.style.webkitTransitionProperty = "-webkit-transform";
+				o.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callStyleCallback(Ljava/lang/String;Ljava/lang/String;)("-webkit-transition-property", "-webkit-transform");
 				o.element.style.webkitTransitionTimingFunction = "cubic-bezier(0,0,0.25,1)";
+				o.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callStyleCallback(Ljava/lang/String;Ljava/lang/String;)("-webkit-transition-timing-function", "cubic-bezier(0,0,0.25,1)");
 				o.element.style.webkitTransitionDuration = "0";
+				o.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callStyleCallback(Ljava/lang/String;Ljava/lang/String;)("-webkit-transition-duration", "0");
 				o.element.style.webkitTransform = h + "0,0" + b;
+				o.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callStyleCallback(Ljava/lang/String;Ljava/lang/String;)("-webkit-transform", h + "0,0" + b);
+				
 				o.options = {
 					hScroll : true,
 					vScroll : true,
@@ -349,6 +367,7 @@ public class IPhoneScroller {
 					m.y = m.options.vScroll ? o : 0;
 					m.element.style.webkitTransform = h + m.x + "px," + m.y
 							+ "px" + b;
+					m.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callStyleCallback(Ljava/lang/String;Ljava/lang/String;)("-webkit-transform", h + m.x + "px," + m.y + "px" + b);
 					if (!n) {
 						if (m.scrollBarX) {
 							m.scrollBarX.setPosition(m.x)
@@ -365,6 +384,7 @@ public class IPhoneScroller {
 					var l = this;
 					m = m || "0";
 					l.element.style.webkitTransitionDuration = m;
+					l.javaObj.@us.synx.wc.client.ui.IPhoneScroller::callStyleCallback(Ljava/lang/String;Ljava/lang/String;)("-webkit-transition-duration", m);
 					if (l.scrollBarX) {
 						l.scrollBarX.bar.style.webkitTransitionDuration = m;
 						l.scrollBarX.wrapper.style.webkitTransitionDuration = d

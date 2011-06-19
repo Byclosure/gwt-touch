@@ -1,5 +1,9 @@
 package com.googlecode.gwttouch.client.ui;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import us.synx.wc.client.ui.IPhoneScroller;
 import us.synx.wc.client.ui.IPhoneScroller.IPhoneScrollerConfig;
 import us.synx.wc.client.ui.IPhoneScroller.PositionCallback;
@@ -35,6 +39,8 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	FlowPanel listContainer;
 	@UiField
 	HTMLPanel list;
+	
+	Map<String,String> hoursListStyleProperties = new HashMap<String, String>();
 	
 	private IPhoneScroller hoursIScroll;
 	private IPhoneScroller iScroll;
@@ -124,10 +130,13 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	public SafariViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 
+		
 		// Hours List
 		String hoursStyle = "position:relative;z-index:1;overflow:hidden;height:30px;";
 		hoursListContainer.getElement().setAttribute("style", hoursStyle);
 		prepareIScrollWidth(hoursListContainer.getElement(), -279);
+		
+		/*
 		IPhoneScrollerConfig hoursIScrollConfig = IPhoneScrollerConfig.getDefault();
 		// config.setBounce(true);
 		hoursIScrollConfig.setBounceLock(false);
@@ -138,6 +147,7 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		hoursIScrollConfig.setHScroll(true);
 		hoursIScrollConfig.setVScroll(false);
 		hoursIScroll = new IPhoneScroller(hoursList, hoursIScrollConfig);
+		*/
 		
 		// Programming Grid
 		String style = "position:relative;z-index:1;overflow:hidden;height:100px;";
@@ -158,13 +168,34 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		PositionCallback pc = new PositionCallback() {
 			public void setPosition(int x, int y) {
 				headerElement.setInnerText(x + " " + y);
-				hoursIScroll.scrollTo(x, 0);
+				// hoursIScroll.scrollTo(x, 0);
 			}
+
+			@Override
+			public void setStyle(String key, String value) { /* Fazer a função só dedicada ao elemento de dentro */
+				hoursListStyleProperties.put(key, value);
+				hoursList.getElement().setAttribute("style", styleString(hoursListStyleProperties));
+			}
+			
+			/* Criar callback para o elemento de fora com o mesmo principio */
 		};
 		iScroll = new IPhoneScroller(list, config, pc);
 	}
 	
-	
+	public static String styleString(Map<String,String> properties) {
+		String result = "";
+		for(Entry<String, String> pair : properties.entrySet()) {
+			String key = pair.getKey();
+			String value = null;
+			if(pair.getValue().matches(".*translate3d.*")) {
+				value = pair.getValue().replaceAll("(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*", "$1,0,$3"); 
+			} else {
+				value = pair.getValue();
+			}
+			result += key + ":" + value + "; ";
+		}
+		return result;
+	}
 
 	@Override
 	public void setPresenter(Presenter listener) {
@@ -173,7 +204,7 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 
 	@Override
 	public void refreshIScroll() {
-		hoursIScroll.refresh();
+		// hoursIScroll.refresh();
 		iScroll.refresh();
 	}
 }
