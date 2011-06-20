@@ -1,6 +1,9 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:com.google.gwt.dom.client">
 	<ui:style>
+		.base {
+			height: 67px;
+		}
 		.number {
 		}
 		
@@ -11,7 +14,7 @@
 		}
 	</ui:style>
 	
-	<g:FlowPanel>
+	<g:FlowPanel styleName="{style.base}">
 		<g:FlowPanel>
 			<g:Label ui:field="numberLabel" styleName="{style.number}" />
 			<g:Label ui:field="nameLabel" styleName="{style.name}" />
