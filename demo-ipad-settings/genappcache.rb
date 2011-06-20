@@ -1,4 +1,4 @@
-source = ENV['SOURCE']
+source = ENV['SOURCE'] || raise("SOURCE=... needed")
 file_types = "css,js,html,jpeg,jpg,png,gif"
 
 
