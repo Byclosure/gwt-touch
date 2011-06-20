@@ -6,28 +6,9 @@
 		type='com.googlecode.gwttouch.client.resources.Resources' />
 
 	<ui:style>
-		.center {
-			background: rgb(232, 234, 235);
-		}
-		
-		.centerInner {
-			background: rgb(232, 234, 235);
-			padding: 0 !IMPORTANT;
-			width: 12155px; /* .centerInner.padding + SUM(table.ths.map(width)) */
-		}
-		
-		.channelTitle {
-			width: 155px;
-			align: center;
-			overflow: hidden;
-		}
-		
-		.channelHour {
-			width: 250px;
-		}
-		
 		.header { /* Copied from gwtTouch-Header */
-			background: -webkit-gradient(linear, 0% 0, 0% 100%, color-stop(0%, rgb(244, 245, 247)), color-stop(100%, rgb(158, 172, 185)));
+			background: -webkit-gradient(linear, 0% 0, 0% 100%, color-stop(0%, rgb(244, 245, 247
+				) ), color-stop(100%, rgb(158, 172, 185) ) );
 			border-bottom: 1px solid rgb(121, 127, 144);
 			border-top: 1px solid rgb(255, 255, 255);
 			color: rgb(113, 120, 128);
@@ -41,12 +22,34 @@
 			text-align: center;
 		}
 		
+		.iScrolContainer {
+		}
+	
+		.list {
+		}
+		
+		.listContainer {
+			padding: 0 !IMPORTANT;
+			width: 12000px; /* .centerInner.padding + SUM(table.ths.map(width)) */
+			margin-top: 0;
+		}
+		
+		.hoursListContainer {
+		}
+		
+		.hoursList {
+			padding: 0 !IMPORTANT;
+			width: 12155px; /* channelColumn.width + centerInner.width */
+			height: 35px;
+		}
+		
 		.programmingTable td {
 			border-style: solid;
 			border-width: 1px;
+			/* height: 65px; */
 		}
 		
-		.hoursTable  {
+		.hoursTable {
 			border-style: none none double none;
 			border-width: 2px;
 		}
@@ -56,7 +59,37 @@
 			border-width: 2px;
 		}
 		
-		.channelListTable {
+		.channelTitle {
+			width: 155px;
+			text-align: center;
+			/* overflow: hidden; */
+		}
+		
+		.channelHour {
+			width: 250px;
+		}
+		
+		.channelListTable tr {
+			text-align: center;
+		}
+		
+		.channelListTable td {
+			border-style: solid;
+			border-width: 1px;
+			height: 65px;
+		}
+		
+		.channelContainer {
+			background: rgb(232, 234, 235);
+			float: left;
+			width: 155px;
+		}
+		
+		.tvShow {
+			float:left;
+			height: 65px;
+			border-style: solid solid double solid;
+			border-width: 1px;
 		}
 	</ui:style>
 	<g:DockLayoutPanel unit="PX">
@@ -65,202 +98,285 @@
 		</g:north>
 		<g:center>
 			<g:FlowPanel>
-				<g:FlowPanel ui:field="hoursListContainer" styleName="{style.center}">
-					<g:HTMLPanel ui:field="hoursList" styleName="{style.centerInner}">
+				<g:FlowPanel ui:field="hoursListContainer" styleName="{style.hoursListContainer} {style.iScrolContainer}">
+					<g:HTMLPanel ui:field="hoursList" styleName="{style.hoursList}">
 						<table class="{style.hoursTable}">
 							<tr align="left">
-								<th class="{style.channelTitle}">Channel</th>
-								<th class="{style.channelHour}">0:00</th>
-								<th class="{style.channelHour}">0:30</th>
-								<th class="{style.channelHour}">1:00</th>
-								<th class="{style.channelHour}">1:30</th>
-								<th class="{style.channelHour}">2:00</th>
-								<th class="{style.channelHour}">2:30</th>
-								<th class="{style.channelHour}">3:00</th>
-								<th class="{style.channelHour}">3:30</th>
-								<th class="{style.channelHour}">4:00</th>
-								<th class="{style.channelHour}">4:30</th>
-								<th class="{style.channelHour}">5:00</th>
-								<th class="{style.channelHour}">5:30</th>
-								<th class="{style.channelHour}">6:00</th>
-								<th class="{style.channelHour}">6:30</th>
-								<th class="{style.channelHour}">7:00</th>
-								<th class="{style.channelHour}">7:30</th>
-								<th class="{style.channelHour}">8:00</th>
-								<th class="{style.channelHour}">8:30</th>
-								<th class="{style.channelHour}">9:00</th>
-								<th class="{style.channelHour}">9:30</th>
-								<th class="{style.channelHour}">10:00</th>
-								<th class="{style.channelHour}">10:30</th>
-								<th class="{style.channelHour}">11:00</th>
-								<th class="{style.channelHour}">11:30</th>
-								<th class="{style.channelHour}">12:00</th>
-								<th class="{style.channelHour}">12:30</th>
-								<th class="{style.channelHour}">13:00</th>
-								<th class="{style.channelHour}">13:30</th>
-								<th class="{style.channelHour}">14:00</th>
-								<th class="{style.channelHour}">14:30</th>
-								<th class="{style.channelHour}">15:00</th>
-								<th class="{style.channelHour}">15:30</th>
-								<th class="{style.channelHour}">16:00</th>
-								<th class="{style.channelHour}">16:30</th>
-								<th class="{style.channelHour}">17:00</th>
-								<th class="{style.channelHour}">17:30</th>
-								<th class="{style.channelHour}">18:00</th>
-								<th class="{style.channelHour}">18:30</th>
-								<th class="{style.channelHour}">19:00</th>
-								<th class="{style.channelHour}">19:30</th>
-								<th class="{style.channelHour}">20:00</th>
-								<th class="{style.channelHour}">20:30</th>
-								<th class="{style.channelHour}">21:00</th>
-								<th class="{style.channelHour}">21:30</th>
-								<th class="{style.channelHour}">22:00</th>
-								<th class="{style.channelHour}">22:30</th>
-								<th class="{style.channelHour}">23:00</th>
-								<th class="{style.channelHour}">23:30</th>
+								<th><div class="{style.channelTitle}">Channel</div></th>
+								<th><div class="{style.channelHour}">0:00</div></th>
+								<th><div class="{style.channelHour}">0:30</div></th>
+								<th><div class="{style.channelHour}">1:00</div></th>
+								<th><div class="{style.channelHour}">1:30</div></th>
+								<th><div class="{style.channelHour}">2:00</div></th>
+								<th><div class="{style.channelHour}">2:30</div></th>
+								<th><div class="{style.channelHour}">3:00</div></th>
+								<th><div class="{style.channelHour}">3:30</div></th>
+								<th><div class="{style.channelHour}">4:00</div></th>
+								<th><div class="{style.channelHour}">4:30</div></th>
+								<th><div class="{style.channelHour}">5:00</div></th>
+								<th><div class="{style.channelHour}">5:30</div></th>
+								<th><div class="{style.channelHour}">6:00</div></th>
+								<th><div class="{style.channelHour}">6:30</div></th>
+								<th><div class="{style.channelHour}">7:00</div></th>
+								<th><div class="{style.channelHour}">7:30</div></th>
+								<th><div class="{style.channelHour}">8:00</div></th>
+								<th><div class="{style.channelHour}">8:30</div></th>
+								<th><div class="{style.channelHour}">9:00</div></th>
+								<th><div class="{style.channelHour}">9:30</div></th>
+								<th><div class="{style.channelHour}">10:00</div></th>
+								<th><div class="{style.channelHour}">10:30</div></th>
+								<th><div class="{style.channelHour}">11:00</div></th>
+								<th><div class="{style.channelHour}">11:30</div></th>
+								<th><div class="{style.channelHour}">12:00</div></th>
+								<th><div class="{style.channelHour}">12:30</div></th>
+								<th><div class="{style.channelHour}">13:00</div></th>
+								<th><div class="{style.channelHour}">13:30</div></th>
+								<th><div class="{style.channelHour}">14:00</div></th>
+								<th><div class="{style.channelHour}">14:30</div></th>
+								<th><div class="{style.channelHour}">15:00</div></th>
+								<th><div class="{style.channelHour}">15:30</div></th>
+								<th><div class="{style.channelHour}">16:00</div></th>
+								<th><div class="{style.channelHour}">16:30</div></th>
+								<th><div class="{style.channelHour}">17:00</div></th>
+								<th><div class="{style.channelHour}">17:30</div></th>
+								<th><div class="{style.channelHour}">18:00</div></th>
+								<th><div class="{style.channelHour}">18:30</div></th>
+								<th><div class="{style.channelHour}">19:00</div></th>
+								<th><div class="{style.channelHour}">19:30</div></th>
+								<th><div class="{style.channelHour}">20:00</div></th>
+								<th><div class="{style.channelHour}">20:30</div></th>
+								<th><div class="{style.channelHour}">21:00</div></th>
+								<th><div class="{style.channelHour}">21:30</div></th>
+								<th><div class="{style.channelHour}">22:00</div></th>
+								<th><div class="{style.channelHour}">22:30</div></th>
+								<th><div class="{style.channelHour}">23:00</div></th>
+								<th><div class="{style.channelHour}">23:30</div></th>
 							</tr>
 						</table>
 					</g:HTMLPanel>
 				</g:FlowPanel>
-				<g:FlowPanel ui:field="channelContainer" styleName="{style.center}">
-					<g:HTMLPanel ui:field="channelList" styleName="{style.centerInner}">
+				<g:FlowPanel ui:field="channelContainer" styleName="{style.channelContainer} {style.iScrolContainer}">
+					<g:HTMLPanel ui:field="channelList">
 						<table class="{style.channelListTable}">
+							<tr><th class="{style.channelHour}" /></tr>
+						
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="1" logo="{res.channel1}" name="TPA1" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="2" logo="{res.channel2}" name="TPA2" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="4" logo="{res.channel4}" name="ZAP Novelas" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="5" logo="{res.channel5}" name="AXN HD" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="6" logo="{res.channel6}" name="AXN" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="7" logo="{res.channel7}" name="FOX NEXT" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="8" logo="{res.channel8}" name="Sony TV"  /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="9" logo="{res.channel9}" name="FX" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="10" logo="{res.channel10}" name="MOV HD" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="11" logo="{res.channel11}" name="MOV" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="12" logo="{res.channel12}" name="TVC1 HD" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="13" logo="{res.channel13}" name="TVC2" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="14" logo="{res.channel14}" name="TVC3" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="15" logo="{res.channel15}" name="HOLLYWOOD" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="16" logo="{res.channel16}" name="ANIMAX" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="17" logo="{res.channel17}" name="TL Novelas (PT)" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="18" logo="{res.channel18}" name="TL Novelas (ES)" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="19" logo="{res.channel19}" name="SIC Noticias" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="20" logo="{res.channel20}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="21" logo="{res.channel21}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="22" logo="{res.channel22}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="23" logo="{res.channel23}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="24" logo="{res.channel24}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="25" logo="{res.channel25}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="26" logo="{res.channel26}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="27" logo="{res.channel27}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="28" logo="{res.channel28}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="29" logo="{res.channel29}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="30" logo="{res.channel30}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="31" logo="{res.channel31}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="32" logo="{res.channel32}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="33" logo="{res.channel33}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="34" logo="{res.channel34}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="35" logo="{res.channel35}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="36" logo="{res.channel36}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="37" logo="{res.channel37}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="38" logo="{res.channel38}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="39" logo="{res.channel39}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="40" logo="{res.channel40}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="41" logo="{res.channel41}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="42" logo="{res.channel42}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="43" logo="{res.channel43}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="44" logo="{res.channel44}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="45" logo="{res.channel45}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="46" logo="{res.channel46}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="47" logo="{res.channel47}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="48" logo="{res.channel48}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="49" logo="{res.channel49}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="50" logo="{res.channel50}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="51" logo="{res.channel51}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="52" logo="{res.channel52}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="53" logo="{res.channel53}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="54" logo="{res.channel54}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="55" logo="{res.channel55}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="56" logo="{res.channel56}" name="TODO" /></td></tr>
+   						    <tr><td class="{style.channelTitle}"><gwttouch:Channel number="57" logo="{res.channel57}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="58" logo="{res.channel58}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="59" logo="{res.channel59}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="60" logo="{res.channel60}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="61" logo="{res.channel61}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="62" logo="{res.channel62}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="63" logo="{res.channel63}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="64" logo="{res.channel64}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="65" logo="{res.channel65}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="66" logo="{res.channel66}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="67" logo="{res.channel67}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="68" logo="{res.channel68}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="69" logo="{res.channel69}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="70" logo="{res.channel70}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="71" logo="{res.channel71}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="72" logo="{res.channel72}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="73" logo="{res.channel73}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="74" logo="{res.channel74}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="75" logo="{res.channel75}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="76" logo="{res.channel76}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="77" logo="{res.channel77}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="78" logo="{res.channel78}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="79" logo="{res.channel79}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="80" logo="{res.channel80}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="81" logo="{res.channel81}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="82" logo="{res.channel82}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="83" logo="{res.channel83}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="84" logo="{res.channel84}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="85" logo="{res.channel85}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="86" logo="{res.channel86}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="87" logo="{res.channel87}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="88" logo="{res.channel88}" name="TODO" /></td></tr>
+							<tr><td class="{style.channelTitle}"><gwttouch:Channel number="89" logo="{res.channel89}" name="TODO" /></td></tr>
 						</table>
 					</g:HTMLPanel>
 				</g:FlowPanel>
-				<g:FlowPanel ui:field="listContainer" styleName="{style.center}">
-					<g:HTMLPanel ui:field="list" styleName="{style.centerInner}">
+				<g:FlowPanel ui:field="listContainer" styleName="{style.listContainer} {style.iScrolContainer}">
+					<g:HTMLPanel ui:field="list" styleName="{style.list}">
 						<table class="{style.programmingTable}">
-							<tr align="left">
-								<th class="{style.channelTitle}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
-								<th class="{style.channelHour}"/>
+						  <tr>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+								<th><div class="{style.channelHour}" /></th>
+							</tr>
+							
+							<tr>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
 							</tr>
 							<tr>
-								<td align="center" styleName="{style.channelTitle}">
-									<gwttouch:Channel number="1" name="TPA1"
-										logo="{res.channel1}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<gwttouch:Channel number="2" name="TPA1"
-										logo="{res.channel2}" />
-								</td>
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -307,7 +423,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -343,10 +459,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="3" name="TV ZIMBO"
-										logo="{res.channel3}" />
-								</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -379,7 +491,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -415,10 +527,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="4" name="ZAP Novelas"
-										logo="{res.channel4}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -439,7 +548,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -475,10 +584,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="5" name="AXN HD"
-										logo="{res.channel5}" />
-								</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									All My Children
@@ -513,7 +618,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -549,10 +654,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="6" name="AXN"
-										logo="{res.channel6}" />
-								</td>
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -599,7 +700,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -635,10 +736,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="7" name="FOX NEXT"
-										logo="{res.channel7}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -671,7 +769,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -707,10 +805,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="8" name="Sony TV"
-										logo="{res.channel8}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -733,45 +828,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="9" name="FX"
-										logo="{res.channel9}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -807,10 +899,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="10" name="MOV HD"
-										logo="{res.channel10}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -857,7 +946,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -893,10 +982,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="11" name="MOV"
-										logo="{res.channel11}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -929,7 +1015,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -965,10 +1051,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="12" name="TVC1 HD"
-										logo="{res.channel12}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -989,7 +1072,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1025,45 +1108,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="13" name="TVC2"
-										logo="{res.channel13}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1099,10 +1179,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="14" name="TVC3"
-										logo="{res.channel14}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -1149,7 +1226,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1185,10 +1262,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="15" name="HOLLYWOOD"
-										logo="{res.channel15}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -1221,7 +1295,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1257,10 +1331,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="16" name="ANIMAX"
-										logo="{res.channel16}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -1281,7 +1352,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1317,45 +1388,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="17" name="TL Novelas (PT)"
-										logo="{res.channel17}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1391,10 +1459,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="18" name="TL Novelas (ES)"
-										logo="{res.channel18}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -1441,7 +1506,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1477,10 +1542,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="19" name="SIC Noticias"
-										logo="{res.channel19}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -1513,7 +1575,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1549,10 +1611,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="20" name="TVI24"
-										logo="{res.channel20}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -1573,7 +1632,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1609,45 +1668,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="21" name="RTPN"
-										logo="{res.channel21}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1683,10 +1739,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="22" name="BBC Worldnews"
-										logo="{res.channel22}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -1733,7 +1786,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1769,10 +1822,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="23" name="Euronews"
-										logo="{res.channel23}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -1805,7 +1855,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1841,10 +1891,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="24" name="AL Jazeera"
-										logo="{res.channel24}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -1865,7 +1912,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1901,45 +1948,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="25" name="France24"
-										logo="{res.channel25}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -1975,10 +2019,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="26" name="TVE 24H"
-										logo="{res.channel26}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -2025,7 +2066,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2061,10 +2102,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="27" name="Russia Today"
-										logo="{res.channel27}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -2097,7 +2135,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2133,10 +2171,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="28" name="Rossyia 24"
-										logo="{res.channel28}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -2157,7 +2192,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2193,45 +2228,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="29" name="Económico TV"
-										logo="{res.channel29}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2267,10 +2299,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="30" name="Management TV"
-										logo="{res.channel30}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -2317,7 +2346,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2353,10 +2382,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="31" name="Bloomberg"
-										logo="{res.channel31}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -2389,7 +2415,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2425,10 +2451,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="32" name="SportTV África HD"
-										logo="{res.channel32}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -2449,7 +2472,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2485,45 +2508,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="33" name="SportTV África"
-										logo="{res.channel33}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2559,10 +2579,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="34" name="TODO"
-										logo="{res.channel34}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -2609,7 +2626,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2645,10 +2662,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="35" name="TODO"
-										logo="{res.channel35}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -2681,7 +2695,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2717,10 +2731,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="36" name="TODO"
-										logo="{res.channel36}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -2741,7 +2752,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2777,45 +2788,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="37" name="TODO"
-										logo="{res.channel37}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2851,10 +2859,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="38" name="TODO"
-										logo="{res.channel38}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -2901,7 +2906,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -2937,10 +2942,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="39" name="TODO"
-										logo="{res.channel39}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -2973,7 +2975,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3009,31 +3011,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="40" name="TODO"
-										logo="{res.channel40}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3069,10 +3068,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="41" name="TODO"
-										logo="{res.channel41}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -3105,7 +3101,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3141,10 +3137,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="42" name="TODO"
-										logo="{res.channel42}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -3165,7 +3158,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3201,45 +3194,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="43" name="TODO"
-										logo="{res.channel43}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3275,10 +3265,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="44" name="TODO"
-										logo="{res.channel44}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -3325,7 +3312,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3361,10 +3348,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="45" name="TODO"
-										logo="{res.channel45}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -3397,7 +3381,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3433,31 +3417,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="46" name="TODO"
-										logo="{res.channel46}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3493,10 +3474,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="47" name="TODO"
-										logo="{res.channel47}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -3529,7 +3507,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3565,10 +3543,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="48" name="TODO"
-										logo="{res.channel48}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -3589,7 +3564,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3625,45 +3600,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="49" name="TODO"
-										logo="{res.channel49}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3699,10 +3671,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="50" name="TODO"
-										logo="{res.channel50}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -3749,7 +3718,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3785,10 +3754,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="51" name="TODO"
-										logo="{res.channel51}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -3821,7 +3787,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3857,31 +3823,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="52" name="TODO"
-										logo="{res.channel52}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3917,10 +3880,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="53" name="TODO"
-										logo="{res.channel53}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -3953,7 +3913,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -3989,10 +3949,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="54" name="TODO"
-										logo="{res.channel54}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -4013,7 +3970,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4049,45 +4006,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="55" name="TODO"
-										logo="{res.channel55}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4123,10 +4077,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="56" name="TODO"
-										logo="{res.channel56}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -4173,7 +4124,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4209,10 +4160,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="57" name="TODO"
-										logo="{res.channel57}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -4245,7 +4193,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4281,31 +4229,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="58" name="TODO"
-										logo="{res.channel58}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4341,10 +4286,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="59" name="TODO"
-										logo="{res.channel59}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -4377,7 +4319,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4413,10 +4355,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="60" name="TODO"
-										logo="{res.channel60}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -4437,7 +4376,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4473,45 +4412,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="61" name="TODO"
-										logo="{res.channel61}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4547,10 +4483,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="62" name="TODO"
-										logo="{res.channel62}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -4597,7 +4530,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4633,10 +4566,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="63" name="TODO"
-										logo="{res.channel63}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -4669,7 +4599,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4705,31 +4635,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="64" name="TODO"
-										logo="{res.channel64}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4765,10 +4692,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="65" name="TODO"
-										logo="{res.channel65}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -4801,7 +4725,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4837,10 +4761,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="66" name="TODO"
-										logo="{res.channel66}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -4861,7 +4782,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4897,45 +4818,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="67" name="TODO"
-										logo="{res.channel67}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -4971,10 +4889,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="68" name="TODO"
-										logo="{res.channel68}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -5021,7 +4936,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5057,10 +4972,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="69" name="TODO"
-										logo="{res.channel69}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -5093,7 +5005,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5129,10 +5041,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="70" name="TODO"
-										logo="{res.channel70}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -5155,10 +5064,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="71" name="TODO"
-										logo="{res.channel71}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -5191,7 +5097,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5227,10 +5133,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="72" name="TODO"
-										logo="{res.channel72}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -5251,7 +5154,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5287,45 +5190,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="73" name="TODO"
-										logo="{res.channel73}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5361,10 +5261,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="74" name="TODO"
-										logo="{res.channel74}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -5411,7 +5308,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5447,10 +5344,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="75" name="TODO"
-										logo="{res.channel75}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -5483,7 +5377,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5519,31 +5413,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="76" name="TODO"
-										logo="{res.channel76}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5579,10 +5470,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="77" name="TODO"
-										logo="{res.channel77}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -5615,7 +5503,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5651,10 +5539,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="78" name="TODO"
-										logo="{res.channel78}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -5675,7 +5560,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5711,45 +5596,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="79" name="TODO"
-										logo="{res.channel79}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5785,10 +5667,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="80" name="TODO"
-										logo="{res.channel80}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -5835,7 +5714,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5871,10 +5750,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="81" name="TODO"
-										logo="{res.channel81}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -5907,7 +5783,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -5943,31 +5819,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="82" name="TODO"
-										logo="{res.channel82}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6003,10 +5876,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="83" name="TODO"
-										logo="{res.channel83}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -6039,7 +5909,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6075,10 +5945,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="84" name="TODO"
-										logo="{res.channel84}" />
-								</td>
+								
 								<td colspan="4">Local Programming</td>
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
@@ -6099,7 +5966,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6135,45 +6002,42 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="85" name="TODO"
-										logo="{res.channel85}" />
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									All My Children
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="2">
-									General Hospital
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									All My Children
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="2">
+									General Hospital
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6209,10 +6073,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="86" name="TODO"
-										logo="{res.channel86}" />
-								</td>
+								
 								<td colspan="1">Local Programming</td>
 								<td colspan="2">
 									The Young and the Restless
@@ -6259,7 +6120,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6295,10 +6156,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="87" name="TODO"
-										logo="{res.channel87}" />
-								</td>
+								
 								<td colspan="2">Local Programming</td>
 								<td colspan="2">
 									Days of Our Lifes
@@ -6331,7 +6189,7 @@
 									Local Programming
 									<div style="color:red">NEW</div>
 								</td>
-								
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6367,31 +6225,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="88" name="TODO"
-										logo="{res.channel88}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>
@@ -6427,31 +6282,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<gwttouch:Channel number="89" name="TODO"
-										logo="{res.channel89}" />
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="4">Local Programming</td>
-								<td colspan="2">Local Programming</td>
-								<td colspan="2">
-									One Life to Live
-									<div style="color:red">NEW</div>
-								</td>
-								<td colspan="6">
-									Local Programming
-									<div style="color:red">NEW</div>
-								</td>
 								
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="4">Local Programming</td>
+								<td colspan="2">Local Programming</td>
+								<td colspan="2">
+									One Life to Live
+									<div style="color:red">NEW</div>
+								</td>
+								<td colspan="6">
+									Local Programming
+									<div style="color:red">NEW</div>
+								</td>
+
 								<td colspan="2">
 									General Hospital
 									<div style="color:red">NEW</div>

@@ -112,7 +112,6 @@ public class IPhoneScroller {
 		void setInnerStyle(String propertyKey, String propertyValue);
 	}
 	
-	@SuppressWarnings("unused")
 	// called by native code to broadcast the new style
 	private void callStyleCallback(String propertyKey, String propertyValue) {
 		if (this.positionCallback != null) {

@@ -25,7 +25,6 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	interface SafariViewImplUiBinder extends UiBinder<Widget, SafariViewImpl> {
 	}
 
-	@SuppressWarnings("unused")
 	private Presenter listener;
 
 	@UiField
@@ -44,7 +43,7 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	HTMLPanel channelList;
 
 
-	private Map<String,String> hoursListStyleProperties = new HashMap<String, String>();
+	private Map<String,String> innerStyleProperties = new HashMap<String, String>();
 	private IPhoneScroller iScroll;
 
 	private native void prepareIScroll(Element wrapper, int deltaHeight,
@@ -123,25 +122,13 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		}
 	}-*/;
 
-	public static String styleString(Map<String, String> properties) {
-		String result = "";
-		for (Entry<String, String> pair : properties.entrySet()) {
-			String key = pair.getKey();
-			String value = null;
-			if (pair.getValue().matches(".*translate3d.*")) {
-				value = pair.getValue().replaceAll(
-						"(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*", "$1,0,$3");
-			} else {
-				value = pair.getValue();
-			}
-			result += key + ":" + value + "; ";
-		}
-		return result;
-	}
-
 	public SafariViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 
+		// Channel List
+		String channelStyle = "position:relative;z-index:1;overflow:hidden;";
+		channelContainer.getElement().setAttribute("style", channelStyle);
+		
 		// Hours List
 		String hoursStyle = "position:relative;z-index:1;overflow:hidden;height:30px;";
 		hoursListContainer.getElement().setAttribute("style", hoursStyle);
@@ -150,14 +137,14 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		String style = "position:relative;z-index:1;overflow:hidden;height:100px";
 		listContainer.getElement().setAttribute("style", style);
 		// prepareIScroll(listContainer.getElement(), -header.getOffsetHeight()-listContainer.getElement().getOffsetHeight(), 0);
-		prepareIScroll(listContainer.getElement(), -45-30, 0);
+		prepareIScroll(listContainer.getElement(), -45-30, -155); /* 155 for the left channel grid */
 
 		PositionCallback pc = new PositionCallback() {
 			@Override
 			public void setInnerStyle(String key, String value) {
-				hoursListStyleProperties.put(key, value);
-				hoursList.getElement().setAttribute("style", styleString(hoursListStyleProperties));
-				
+				innerStyleProperties.put(key, value);
+				hoursList.getElement().setAttribute("style", styleString(innerStyleProperties, FilterTransition.XX));
+				channelList.getElement().setAttribute("style", styleString(innerStyleProperties, FilterTransition.YY));
 			}
 		};
 
@@ -174,6 +161,40 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		config.setDesktopCompatibility(true);
 
 		iScroll = new IPhoneScroller(list, config, pc);
+	}
+	
+	private static enum FilterTransition {NONE, YY, XX};
+	
+	private static String styleString(Map<String, String> properties, FilterTransition filter) {
+		String result = "";
+		for (Entry<String, String> pair : properties.entrySet()) {
+			String key = pair.getKey();
+			String value = null;
+			// pair.getValue().matches(".*translate3d.*"))
+			switch (filter) {
+			case XX:
+				if (pair.getValue().matches(".*translate3d.*")) {
+					value = pair.getValue().replaceAll(
+							"\\((.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)", "($1,0,$3)");
+				} else {
+					value = pair.getValue();
+				}
+				break;
+			case YY:
+				if (pair.getValue().matches(".*translate3d.*")) {
+					value = pair.getValue().replaceAll(
+							"\\((.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)", "(0,$2,$3)");
+				} else {
+					value = pair.getValue();
+				}
+				break;
+			default: // same as NONE
+				value = pair.getValue();
+				break;
+			}
+			result += key + ":" + value + "; ";
+		}
+		return result;
 	}
 
 	@Override
