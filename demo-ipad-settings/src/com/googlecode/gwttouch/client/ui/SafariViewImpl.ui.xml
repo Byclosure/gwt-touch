@@ -37,9 +37,12 @@
 		.hoursListContainer {
 		}
 		
-		.hoursList {
+		.hoursList, .list {
 			padding: 0 !IMPORTANT;
 			width: 12155px; /* channelColumn.width + centerInner.width */
+		}
+		
+		.hoursList {
 			height: 35px;
 		}
 		

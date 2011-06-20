@@ -10,6 +10,8 @@ import us.synx.wc.client.ui.IPhoneScroller.PositionCallback;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -53,10 +55,10 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 			height = height + deltaHeight;
 			wrapper.style.height = height + 'px';
 		};
+		jsFixHeight();
 		$wnd.addEventListener(
 				'onorientationchange' in $wnd ? 'orientationchange' : 'resize',
 				jsFixHeight, false);
-		jsFixHeight();
 	}-*/;
 	
 	private native void prepareIScrollWidth(Element wrapper, int deltaWidth) /*-{
@@ -66,10 +68,10 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 			width = width + deltaWidth;
 			wrapper.style.width = width + 'px';
 		};
+		jsFixHeight();
 		$wnd.addEventListener(
 				'onorientationchange' in $wnd ? 'orientationchange' : 'resize',
 				jsFixHeight, false);
-		jsFixHeight();
 	}-*/;
 
 	public static int getAvailableScreenHeight() {

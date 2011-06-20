@@ -3,9 +3,9 @@ package com.googlecode.gwttouch.client.activity;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.googlecode.gwttouch.client.ClientFactory;
-import com.googlecode.gwttouch.client.ui.NotificationsView;
 import com.googlecode.gwttouch.client.ui.SafariView;
 
 public class SafariActivity extends AbstractActivity implements SafariView.Presenter {
@@ -22,7 +22,12 @@ public class SafariActivity extends AbstractActivity implements SafariView.Prese
 		this.view = clientFactory.getSafariView();
 		this.view.setPresenter(this);
 		panel.setWidget(view.asWidget());
-		this.view.refreshIScroll();
+		Timer t = new Timer() {
+			public void run() {
+				view.refreshIScroll();		
+			}
+		};
+		t.schedule(1);
 	}
 
 	@Override

@@ -1,29 +1,5 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:t="urn:import:com.googlecode.gwttouch.client" 
-	xmlns:u="urn:import:com.googlecode.gwttouch.client.ui" 
-	xmlns:gmw="urn:import:com.googlecode.gwttouch.client.formview" 
-	xmlns:f="urn:import:com.googlecode.gwttouch.client.menuview" 
-	xmlns:tr="urn:import:com.googlecode.gwttouch.client.transitions" 
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:with field='res' type='com.googlecode.gwttouch.client.resources.Resources'/>
-	<ui:style>
-		.north { background: literal("-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6C85A4), color-stop(50%, #556C89), color-stop(51%, #4B5F79), color-stop(100%, #415369))"); }
-		.west { border-right:1px solid #000;background:rgb(232,234,235);}
-		.center { background:rgb(232,234,235);}
-		.centerInner { background:rgb(232,234,235);height:1000px; padding:20px 20px !IMPORTANT;}
-		.bottomLabel { position:absolute;bottom:0px;left:10px;}
-		.middleLabel { position:absolute;bottom:49%;left:10px;}
-		
-		@external gwtTouch-Header-RightBorder;
-		.gwtTouch-Header-RightBorder { border-right:1px solid #000; }
-		
-		.innerInner {
-			border:1px solid #000;
-			position:relative;
-			height:100px;
-			overflow:hidden;
-		}
-	</ui:style>
+	xmlns:u="urn:import:com.googlecode.gwttouch.client.ui">
 	<u:SimpleResizePanel ui:field="centerPanel"></u:SimpleResizePanel>
 </ui:UiBinder> 

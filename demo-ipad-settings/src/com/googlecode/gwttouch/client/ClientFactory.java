@@ -6,17 +6,16 @@ import com.googlecode.gwttouch.client.ui.GeneralView;
 import com.googlecode.gwttouch.client.ui.NotificationsView;
 import com.googlecode.gwttouch.client.ui.PictureFrameView;
 import com.googlecode.gwttouch.client.ui.SafariView;
-import com.googlecode.gwttouch.client.ui.SafariViewImpl;
 import com.googlecode.gwttouch.client.ui.WifiView;
 
 public interface ClientFactory {
 
 	EventBus getEventBus();
 	PlaceController getPlaceController();
-	SettingsViewImpl getSettingsView();
+	SettingsView getSettingsView();
 	NotificationsView getNotificationsView();
 	WifiView getWifiView();
 	GeneralView getGeneralView();
 	PictureFrameView getPictureFrameView();
-	SafariViewImpl getSafariView();
+	SafariView getSafariView();
 }
