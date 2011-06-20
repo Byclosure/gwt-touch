@@ -53,8 +53,10 @@
 		}
 		
 		.hoursTable {
-			border-style: none none double none;
-			border-width: 2px;
+			float: left;
+			border-bottom: 2px double black;
+			border-spacing: 2px;
+			border-collapse: separate;
 		}
 		
 		.hoursTable td {
@@ -101,7 +103,7 @@
 		</g:north>
 		<g:center>
 			<g:HTMLPanel>
-				<table class="{style.hoursTable}" style="float:left">
+				<table class="{style.hoursTable}" style="border-top: 4px solid white;border-spacing:0">
 					<tr align="left">
 						<th><div class="{style.channelTitle}">Channel</div></th>
 					</tr>
@@ -162,6 +164,7 @@
 						</table>
 					</g:HTMLPanel>
 				</g:FlowPanel>
+				<div style="clear:both"></div>
 				<g:FlowPanel ui:field="channelContainer" styleName="{style.channelContainer} {style.iScrolContainer}">
 					<g:HTMLPanel ui:field="channelList">
 						<table class="{style.channelListTable}">
