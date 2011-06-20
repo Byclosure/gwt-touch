@@ -46,13 +46,22 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 	private Map<String,String> innerStyleProperties = new HashMap<String, String>();
 	private IPhoneScroller iScroll;
 
-	private native void prepareIScroll(Element wrapper, int deltaHeight,
-			int deltaWidth) /*-{
+	private native void prepareIScrollHeight(Element wrapper, int deltaHeight) /*-{
 		var javaObj = this;
 		var jsFixHeight = function() {
 			var height = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenHeight()();
 			height = height + deltaHeight;
 			wrapper.style.height = height + 'px';
+		};
+		$wnd.addEventListener(
+				'onorientationchange' in $wnd ? 'orientationchange' : 'resize',
+				jsFixHeight, false);
+		jsFixHeight();
+	}-*/;
+	
+	private native void prepareIScrollWidth(Element wrapper, int deltaWidth) /*-{
+		var javaObj = this;
+		var jsFixHeight = function() {
 			var width = @com.googlecode.gwttouch.client.ui.SafariViewImpl::getAvailableScreenWidth()();
 			width = width + deltaWidth;
 			wrapper.style.width = width + 'px';
@@ -61,9 +70,6 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 				'onorientationchange' in $wnd ? 'orientationchange' : 'resize',
 				jsFixHeight, false);
 		jsFixHeight();
-		// The following is present in the iScroll horizontal example
-		// but this would mess up the regular ClickHandlers across the application.
-		// $doc.addEventListener('touchstart', function(e){ e.preventDefault(); }, false);
 	}-*/;
 
 	public static int getAvailableScreenHeight() {
@@ -132,12 +138,12 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		// Hours List
 		String hoursStyle = "position:relative;z-index:1;overflow:hidden;height:30px;";
 		hoursListContainer.getElement().setAttribute("style", hoursStyle);
-		// prepareIScroll(listContainer.getElement(), -45, 0); this line is wrong
+		prepareIScrollWidth(hoursListContainer.getElement(), 0); /* Full screen width */
 
 		String style = "position:relative;z-index:1;overflow:hidden;height:100px";
 		listContainer.getElement().setAttribute("style", style);
-		// prepareIScroll(listContainer.getElement(), -header.getOffsetHeight()-listContainer.getElement().getOffsetHeight(), 0);
-		prepareIScroll(listContainer.getElement(), -45-30, -155); /* 155 for the left channel grid */
+		prepareIScrollHeight(listContainer.getElement(), -45-30); /* -header.getOffsetHeight()-listContainer.getElement().getOffsetHeight() */
+		prepareIScrollWidth(listContainer.getElement(), -155); /* 155 for the left channel grid */
 
 		PositionCallback pc = new PositionCallback() {
 			@Override
