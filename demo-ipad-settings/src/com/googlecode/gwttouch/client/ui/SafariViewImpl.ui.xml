@@ -100,12 +100,16 @@
 			<g:HTMLPanel styleName="gwtTouch-Header {style.header}" ui:field="header">Guia TV</g:HTMLPanel>
 		</g:north>
 		<g:center>
-			<g:FlowPanel>
+			<g:HTMLPanel>
+				<table class="{style.hoursTable}" style="float:left">
+					<tr align="left">
+						<th><div class="{style.channelTitle}">Channel</div></th>
+					</tr>
+				</table>
 				<g:FlowPanel ui:field="hoursListContainer" styleName="{style.hoursListContainer} {style.iScrolContainer}">
 					<g:HTMLPanel ui:field="hoursList" styleName="{style.hoursList}">
 						<table class="{style.hoursTable}">
 							<tr align="left">
-								<th><div class="{style.channelTitle}">Channel</div></th>
 								<th><div class="{style.channelHour}">0:00</div></th>
 								<th><div class="{style.channelHour}">0:30</div></th>
 								<th><div class="{style.channelHour}">1:00</div></th>
@@ -6344,7 +6348,7 @@
 						</table>
 					</g:HTMLPanel>
 				</g:FlowPanel>
-			</g:FlowPanel>
+			</g:HTMLPanel>
 		</g:center>
 	</g:DockLayoutPanel>
 </ui:UiBinder> 

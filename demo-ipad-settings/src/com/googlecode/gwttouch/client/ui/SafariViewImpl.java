@@ -140,7 +140,7 @@ public class SafariViewImpl extends ResizeComposite implements SafariView {
 		// Hours List
 		String hoursStyle = "position:relative;z-index:1;overflow:hidden;height:30px;";
 		hoursListContainer.getElement().setAttribute("style", hoursStyle);
-		prepareIScrollWidth(hoursListContainer.getElement(), 0); /* Full screen width */
+		prepareIScrollWidth(hoursListContainer.getElement(), -155); /* 155 for the left channel grid */
 
 		String style = "position:relative;z-index:1;overflow:hidden;height:100px";
 		listContainer.getElement().setAttribute("style", style);
